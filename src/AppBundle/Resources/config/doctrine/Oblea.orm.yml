@@ -2,7 +2,7 @@ AppBundle\Entity\Oblea:
     type: entity
     table: oblea
     indexes:
-        chapa_oblea:
+        FK_OBLEA_CHAPA:
             columns:
                 - id_chapa
     uniqueConstraints:

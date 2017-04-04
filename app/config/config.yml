@@ -70,55 +70,113 @@ swiftmailer:
     spool: { type: memory }
 
 easy_admin:
-    site_name: 'RELOJES TAXI-REMI.'
-
+    site_name: 'Administrador'
+    design:
+        brand_color: '#1ABC9C'
+        assets:
+            favicon: '/assets/icons/logo_giubergia_ingenieria.png'
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
     entities:
         Certificado:
+            label: 'Certificados'
             class: AppBundle\Entity\Certificado
+            form:
+                fields:
+                    - { property: 'numePrec', label: 'Nº Precinto' }
+                    - { property: 'numeReloj', label: 'Nº Reloj' }
+                    - { property: 'idAuto', label: 'Dominio', type: 'easyadmin_autocomplete' }
+                    - { property: 'idPermi', label: 'Permisionario', type: 'easyadmin_autocomplete' }
+                    - { property: 'idReloj', label: 'Reloj', type: 'easyadmin_autocomplete' }
+                    - { property: 'idAgen', label: 'Agencia', type: 'easyadmin_autocomplete' }
+                    - { property: 'idOblea', label: 'Nº Habilitación', type: 'easyadmin_autocomplete' }
+                    - { property: 'idMonto', label: 'Tarifa', type: 'easyadmin_autocomplete' }
+                    - { property: 'idTitu', label: 'Titular', type: 'easyadmin_autocomplete' }
             list:
-                fields: [ 'numePrec', 'numeReloj']
+                title: "Lista de Certificados"
+
+            new:
+                title: "Nuevo Certificado"
         Agencia:
+            label: 'Agencias'
             class: AppBundle\Entity\Agencia
             list:
+                title: "Lista de Agencias"
                 fields: [ 'nombAgen']
+            new:
+                title: "Nueva Agencia"
         Auto:
+            label: 'Dominios'
             class: AppBundle\Entity\Auto
             list:
+                title: "Lista de Dominios"
                 fields: [ 'domiAuto', 'anioAuto' ]
-        Chapa:
-            class: AppBundle\Entity\Chapa
-            list:
-                fields: [ 'numeChapa']
-        Marca:
-            class: AppBundle\Entity\Marca
-            list:
-                fields: [ 'nombMarca']
-        Modelo:
-            class: AppBundle\Entity\Modelo
-            list:
-                fields: [ 'nombMode']
-        Monto:
-            class: AppBundle\Entity\Monto
-            list:
-                fields: [ 'bDia', 'bNoch', 'mDia', 'mNoch']
+            new:
+                title: "Nuevo Dominio"
         Oblea:
+            label: 'Nº Habilitaciones'
             class: AppBundle\Entity\Oblea
             list:
+                title: "Lista de Nº Habilitaciones"
                 fields: [ 'numeOblea' ]
+            new:
+                title: "Nuevo Nº de Habilitacion"
+        Chapa:
+            label: 'Tipo de Habilitación'
+            class: AppBundle\Entity\Chapa
+            list:
+                title: "Lista de Tipos de Habilitaciones"
+                fields: [ 'nombChapa']
+            new:
+                title: "Nuevo Tipo de Habilitación"
+        Marca:
+            label: 'Marcas'
+            class: AppBundle\Entity\Marca
+            list:
+                title: "Lista de Marcas"
+                fields: [ 'nombMarca']
+            new:
+                title: "Nueva Marca de Vehículo"
+        Modelo:
+            label: 'Modelos'
+            class: AppBundle\Entity\Modelo
+            list:
+                title: "Lista de Modelos"
+                fields: [ 'nombMode']
+            new:
+                title: "Nuevo Modelo de Vehículo"
+        Monto:
+            label: 'Tarifa'
+            class: AppBundle\Entity\Monto
+            list:
+                title: "Lista de Tarifas"
+                fields: [ 'bDia', 'bNoch', 'mDia', 'mNoch']
         Permisionario:
+            label: 'Permisionarios'
             class: AppBundle\Entity\Permisionario
             list:
+                title: "Lista de Permisionarios"
                 fields: [ 'nombPermi' ]
+            new:
+                title: "Nuevo Permisionario"
         Reloj:
+            label: 'Relojes'
             class: AppBundle\Entity\Reloj
             list:
+                title: "Lista de Relojes"
                 fields: [ 'nombReloj' ]
+            new:
+                title: "Nuevo Reloj"
         Titular:
+            label: 'Titular'
             class: AppBundle\Entity\Titular
             list:
+                title: "Titular Taller"
                 fields: [ 'nombTitu' ]
 
 
 
     list:
-        max_results: 5
+        max_results: 10

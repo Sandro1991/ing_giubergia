@@ -57,3 +57,4 @@ class Marca
         return(string) $this->nombMarca;
     }
 }
+

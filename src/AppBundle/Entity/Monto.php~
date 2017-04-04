@@ -141,6 +141,7 @@ class Monto
 
     public function __toString()
     {
-        return(string) $this->bDia;
+        return(string) array($this->bDia,$this->bNoch, $this->mDia, $this->mNoch);
     }
 }
+
