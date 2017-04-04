@@ -57,3 +57,4 @@ class Reloj
         return(string) $this->nombReloj;
     }
 }
+

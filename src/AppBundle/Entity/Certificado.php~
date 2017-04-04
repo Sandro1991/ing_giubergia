@@ -313,3 +313,4 @@ class Certificado
         return $this->idTitu;
     }
 }
+

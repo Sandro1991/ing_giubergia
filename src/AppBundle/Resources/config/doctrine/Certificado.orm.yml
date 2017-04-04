@@ -2,12 +2,15 @@ AppBundle\Entity\Certificado:
     type: entity
     table: certificado
     indexes:
+        FK_AUTO_CERT:
+            columns:
+                - id_auto
+        FK_TITU_CERT:
+            columns:
+                - id_titu
         FK_PERMI_CERT:
             columns:
                 - id_permi
-        FK_RELOJ_CERT:
-            columns:
-                - id_reloj
         FK_AGEN_CERT:
             columns:
                 - id_agen
@@ -17,12 +20,9 @@ AppBundle\Entity\Certificado:
         FK_MONTO_CERT:
             columns:
                 - id_monto
-        FK_AUTO_CERT:
+        FK_RELOJ_CERT:
             columns:
-                - id_auto
-        FK_TITU_CERT:
-            columns:
-                - id_titu
+                - id_reloj
     id:
         idCert:
             type: bigint

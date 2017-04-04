@@ -57,3 +57,4 @@ class Chapa
         return(string) $this->nombChapa;
     }
 }
+
