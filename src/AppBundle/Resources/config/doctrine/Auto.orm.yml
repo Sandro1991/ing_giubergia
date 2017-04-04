@@ -1,0 +1,48 @@
+AppBundle\Entity\Auto:
+    type: entity
+    table: auto
+    indexes:
+        id_mode:
+            columns:
+                - id_mode
+    uniqueConstraints:
+        domi_auto:
+            columns:
+                - domi_auto
+    id:
+        idAuto:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_auto
+            generator:
+                strategy: IDENTITY
+    fields:
+        domiAuto:
+            type: string
+            nullable: true
+            length: 6
+            options:
+                fixed: false
+            column: domi_auto
+        anioAuto:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: anio_auto
+    manyToOne:
+        idMode:
+            targetEntity: Modelo
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_mode:
+                    referencedColumnName: id_mode
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

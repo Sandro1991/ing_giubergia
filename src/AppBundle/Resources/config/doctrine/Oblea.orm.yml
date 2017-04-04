@@ -1,0 +1,41 @@
+AppBundle\Entity\Oblea:
+    type: entity
+    table: oblea
+    indexes:
+        chapa_oblea:
+            columns:
+                - id_chapa
+    uniqueConstraints:
+        nume_oblea:
+            columns:
+                - nume_oblea
+    id:
+        idOblea:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_oblea
+            generator:
+                strategy: IDENTITY
+    fields:
+        numeOblea:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: nume_oblea
+    manyToOne:
+        idChapa:
+            targetEntity: Chapa
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_chapa:
+                    referencedColumnName: id_chapa
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

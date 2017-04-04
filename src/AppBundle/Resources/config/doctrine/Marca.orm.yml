@@ -1,0 +1,22 @@
+AppBundle\Entity\Marca:
+    type: entity
+    table: marca
+    id:
+        idMarca:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_marca
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombMarca:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: nomb_marca
+    lifecycleCallbacks: {  }

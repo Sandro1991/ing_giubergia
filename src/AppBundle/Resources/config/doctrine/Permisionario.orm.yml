@@ -1,0 +1,40 @@
+AppBundle\Entity\Permisionario:
+    type: entity
+    table: permisionario
+    uniqueConstraints:
+        dni_permi:
+            columns:
+                - dni_permi
+    id:
+        idPermi:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_permi
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombPermi:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: nomb_permi
+        direPermi:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: dire_permi
+        dniPermi:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+            column: dni_permi
+    lifecycleCallbacks: {  }

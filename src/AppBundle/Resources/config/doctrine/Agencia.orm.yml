@@ -1,0 +1,26 @@
+AppBundle\Entity\Agencia:
+    type: entity
+    table: agencia
+    uniqueConstraints:
+        nomb_agen:
+            columns:
+                - nomb_agen
+    id:
+        idAgen:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_agen
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombAgen:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: nomb_agen
+    lifecycleCallbacks: {  }

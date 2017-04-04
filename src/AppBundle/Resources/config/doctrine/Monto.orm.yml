@@ -1,0 +1,43 @@
+AppBundle\Entity\Monto:
+    type: entity
+    table: monto
+    id:
+        idMonto:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_monto
+            generator:
+                strategy: IDENTITY
+    fields:
+        bDia:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: b_dia
+        bNoch:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: b_noch
+        mDia:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: m_dia
+        mNoch:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: m_noch
+    lifecycleCallbacks: {  }

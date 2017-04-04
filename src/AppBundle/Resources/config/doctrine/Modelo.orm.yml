@@ -1,0 +1,41 @@
+AppBundle\Entity\Modelo:
+    type: entity
+    table: modelo
+    indexes:
+        FK_MODE_MARCA:
+            columns:
+                - id_marca
+    uniqueConstraints:
+        nomb_mode:
+            columns:
+                - nomb_mode
+    id:
+        idMode:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_mode
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombMode:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: nomb_mode
+    manyToOne:
+        idMarca:
+            targetEntity: Marca
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_marca:
+                    referencedColumnName: id_marca
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

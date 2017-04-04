@@ -1,0 +1,128 @@
+AppBundle\Entity\Certificado:
+    type: entity
+    table: certificado
+    indexes:
+        FK_PERMI_CERT:
+            columns:
+                - id_permi
+        FK_RELOJ_CERT:
+            columns:
+                - id_reloj
+        FK_AGEN_CERT:
+            columns:
+                - id_agen
+        FK_OBLEA_CERT:
+            columns:
+                - id_oblea
+        FK_MONTO_CERT:
+            columns:
+                - id_monto
+        FK_AUTO_CERT:
+            columns:
+                - id_auto
+        FK_TITU_CERT:
+            columns:
+                - id_titu
+    id:
+        idCert:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_cert
+            generator:
+                strategy: IDENTITY
+    fields:
+        numePrec:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                comment: 'numero de precinto'
+            column: nume_prec
+        numeReloj:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: s/n
+            column: nume_reloj
+        dateSave:
+            type: datetime
+            nullable: true
+            column: date_save
+    manyToOne:
+        idAgen:
+            targetEntity: Agencia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_agen:
+                    referencedColumnName: id_agen
+            orphanRemoval: false
+        idAuto:
+            targetEntity: Auto
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_auto:
+                    referencedColumnName: id_auto
+            orphanRemoval: false
+        idMonto:
+            targetEntity: Monto
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_monto:
+                    referencedColumnName: id_monto
+            orphanRemoval: false
+        idOblea:
+            targetEntity: Oblea
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_oblea:
+                    referencedColumnName: id_oblea
+            orphanRemoval: false
+        idPermi:
+            targetEntity: Permisionario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_permi:
+                    referencedColumnName: id_permi
+            orphanRemoval: false
+        idReloj:
+            targetEntity: Reloj
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_reloj:
+                    referencedColumnName: id_reloj
+            orphanRemoval: false
+        idTitu:
+            targetEntity: Titular
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_titu:
+                    referencedColumnName: id_titu
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
