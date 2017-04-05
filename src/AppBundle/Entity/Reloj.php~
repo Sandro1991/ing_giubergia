@@ -51,10 +51,5 @@ class Reloj
     {
         return $this->nombReloj;
     }
-
-    public function __toString()
-    {
-        return(string) $this->nombReloj;
-    }
 }
 

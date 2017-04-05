@@ -225,10 +225,5 @@ class Titular
     {
         return $this->certTitu;
     }
-
-    public function __toString()
-    {
-        return(string) $this->nombTitu;
-    }
 }
 

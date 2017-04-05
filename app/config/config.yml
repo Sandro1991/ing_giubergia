@@ -70,113 +70,234 @@ swiftmailer:
     spool: { type: memory }
 
 easy_admin:
+##acciones
+    list:
+        actions:
+            - { name: 'edit', label: 'Modificar'}
+            - { name: 'new', label: 'Nuevo'}
+            - { name: 'delete', label: 'Eliminar'}
+            - { name: 'search', label: 'Buscar'}
+    show:
+        actions:
+            - { name: 'edit', label: 'Modificar'}
+            - { name: 'delete', label: 'Eliminar'}
+            - { name: 'list', label: 'Volver'}
+    new:
+        actions:
+            - { name: 'list', label: 'Volver al Listado'}
+    edit:
+        actions:
+            - { name: 'delete', label: 'Eliminar'}
+            - { name: 'list', label: 'Volver al Listado'}
+##diseño layout
     site_name: 'Administrador'
     design:
-        brand_color: '#1ABC9C'
+        form_theme: 'vertical'
+        brand_color: '#374089'
         assets:
             favicon: '/assets/icons/logo_giubergia_ingenieria.png'
+##formato de fechas y horas
     formats:
         date:     'd/m/Y'
         time:     'H:i'
         datetime: 'd/m/Y H:i:s'
+
     entities:
+##entidad certificado
         Certificado:
             label: 'Certificados'
             class: AppBundle\Entity\Certificado
+            disabled_actions: ['show']
             form:
                 fields:
-                    - { property: 'numePrec', label: 'Nº Precinto' }
-                    - { property: 'numeReloj', label: 'Nº Reloj' }
+                    - { type: 'group', css_class: 'col-sm-6'}
+                    - { property: 'idChapa', label: 'Tipo de Habilitación', type: 'easyadmin_autocomplete' }
+                    - { property: 'numeChapa', label: 'Nº Licencia/Oblea' }
                     - { property: 'idAuto', label: 'Dominio', type: 'easyadmin_autocomplete' }
                     - { property: 'idPermi', label: 'Permisionario', type: 'easyadmin_autocomplete' }
-                    - { property: 'idReloj', label: 'Reloj', type: 'easyadmin_autocomplete' }
                     - { property: 'idAgen', label: 'Agencia', type: 'easyadmin_autocomplete' }
-                    - { property: 'idOblea', label: 'Nº Habilitación', type: 'easyadmin_autocomplete' }
-                    - { property: 'idMonto', label: 'Tarifa', type: 'easyadmin_autocomplete' }
+                    - { type: 'group', css_class: 'col-sm-6'}
+                    - { property: 'numePrec', label: 'Nº Precinto' }
+                    - { property: 'idReloj', label: 'Reloj', type: 'easyadmin_autocomplete' }
+                    - { property: 'numeReloj', label: 'Nº Reloj' }
+                    - { property: 'idMonto', label: 'Tarifa', type: 'easyadmin_autocomplete'}
                     - { property: 'idTitu', label: 'Titular', type: 'easyadmin_autocomplete' }
             list:
                 title: "Lista de Certificados"
-
+                fields:
+                    - { property: 'numeChapa', label: 'Nº Oblea/Licencia'}
+                    - { property: 'idAuto', label: 'Dominio'}
+                    - { property: 'idPermi', label: 'Permisionario'}
+                    - { property: 'numePrec', label: 'Nº Precinto'}
+                    - { property: 'idReloj', label: 'Reloj'}
+                    - { property: 'numeReloj', label: 'Nº Reloj'}
+                    - { property: 'idAgen', label: 'Agencia'}
+                    - { property: 'idMonto', label: 'Tarifa'}
             new:
                 title: "Nuevo Certificado"
+            edit:
+                title: 'Editando Certificado'
+##entidad Agencia
         Agencia:
             label: 'Agencias'
             class: AppBundle\Entity\Agencia
+            form:
+                fields:
+                    - { property: 'nombAgen', label: 'Nombre Agencia'}
             list:
-                title: "Lista de Agencias"
-                fields: [ 'nombAgen']
+                title: "Agencias Disponibles"
+                fields:
+                    - { property: 'nombAgen', label: 'Nombre Agencia'}
             new:
-                title: "Nueva Agencia"
+                title: "Crear Nueva Agencia"
+            edit:
+                title: 'Editando Certificado'
+##entidad Auto dominio
         Auto:
             label: 'Dominios'
             class: AppBundle\Entity\Auto
+            form:
+                fields:
+                    - { property: 'domiAuto', label: 'Dominio del Vehículo'}
+                    - { property: 'anioAuto', label: 'Año'}
+                    - { property: 'idMode', label: 'Modelo', type: 'easyadmin_autocomplete'}
             list:
-                title: "Lista de Dominios"
-                fields: [ 'domiAuto', 'anioAuto' ]
+                title: "Dominios Disponibles"
+                fields:
+                    - { property: 'domiAuto', label: 'Dominio'}
+                    - { property: 'anioAuto', label: 'Año'}
+                    - { property: 'idMode', label: 'Modelo'}
             new:
-                title: "Nuevo Dominio"
-        Oblea:
-            label: 'Nº Habilitaciones'
-            class: AppBundle\Entity\Oblea
-            list:
-                title: "Lista de Nº Habilitaciones"
-                fields: [ 'numeOblea' ]
-            new:
-                title: "Nuevo Nº de Habilitacion"
+                title: "Crear Nuevo Dominio"
+            edit:
+                title: 'Editando Dominio'
+##entidad Chapa Habilitacion
         Chapa:
             label: 'Tipo de Habilitación'
             class: AppBundle\Entity\Chapa
+            form:
+                fields:
+                    - { property: 'nombChapa', label: 'Tipo Habilitación'}
             list:
-                title: "Lista de Tipos de Habilitaciones"
-                fields: [ 'nombChapa']
+                title: "Lista de Habilitaciones"
+                fields:
+                    - { property: 'nombChapa', label: 'Tipo Habilitación'}
             new:
                 title: "Nuevo Tipo de Habilitación"
+            edit:
+                title: 'Editando Tipo de Habilitación'
+##entidad Marca
         Marca:
             label: 'Marcas'
             class: AppBundle\Entity\Marca
+            form:
+                fields:
+                    - { property: 'nombMarca', label: 'Nombre Marca'}
             list:
                 title: "Lista de Marcas"
-                fields: [ 'nombMarca']
+                fields:
+                    - { property: 'nombMarca', label: 'Nombre Marca'}
             new:
                 title: "Nueva Marca de Vehículo"
+            edit:
+                title: "Editando Marca de Vehículo"
+##entidad Modelo
         Modelo:
             label: 'Modelos'
             class: AppBundle\Entity\Modelo
+            form:
+                - { property: 'nombMode', label: 'Nombre Modelo'}
+                - { property: 'idMarca', label: 'Marca Perteneciente', type: 'easyadmin_autocomplete'}
             list:
                 title: "Lista de Modelos"
-                fields: [ 'nombMode']
+                fields:
+                    - { property: 'nombMode', label: 'Nombre Modelo'}
+                    - { property: 'idMarca', label: 'Marca Perteneciente'}
             new:
                 title: "Nuevo Modelo de Vehículo"
+            edit:
+                title: "Editando Modelo de Vehículo"
+##entidad Monto
         Monto:
             label: 'Tarifa'
             class: AppBundle\Entity\Monto
+            form:
+                fields:
+                    - { property: 'nombMonto', label: 'Nombre Tarifa'}
+                    - { property: 'bDia', label: 'Bajada Bandera de Día'}
+                    - { property: 'bNoch', label: 'Bajada Bandera de Noche'}
+                    - { property: 'mDia', label: 'Moneda de Día'}
+                    - { property: 'mNoch', label: 'Moneda de Noche'}
             list:
                 title: "Lista de Tarifas"
-                fields: [ 'bDia', 'bNoch', 'mDia', 'mNoch']
+                fields:
+                    - { property: 'nombMonto', label: 'Nombre Tarifa'}
+                    - { property: 'bDia', label: 'Bajada Día'}
+                    - { property: 'bNoch', label: 'Bajada Noche'}
+                    - { property: 'mDia', label: 'Moneda Día'}
+                    - { property: 'mNoch', label: 'Moneda Noche'}
+            new:
+                title: "Nueva Tarifa"
+            edit:
+                title: "Editando Tarifa"
+##entidad Permisionario
         Permisionario:
             label: 'Permisionarios'
             class: AppBundle\Entity\Permisionario
+            form:
+                fields:
+                    - { property: 'nombPermi', label: 'Nombre y Apellido del Permisionario'}
+                    - { property: 'dniPermi', label: 'Nº Documento'}
+                    - { property: 'direPermi', label: 'Domicilio'}
             list:
                 title: "Lista de Permisionarios"
-                fields: [ 'nombPermi' ]
+                fields:
+                    - { property: 'nombPermi', label: 'Nombre y Apellido'}
+                    - { property: 'dniPermi', label: 'Nº Documento'}
+                    - { property: 'direPermi', label: 'Domicilio'}
             new:
                 title: "Nuevo Permisionario"
+            edit:
+                title: "Editando Permisionario"
+##entidad Reloj
         Reloj:
             label: 'Relojes'
             class: AppBundle\Entity\Reloj
+            form:
+                fields:
+                    - { property: 'nombReloj', label: 'Nombre de Reloj'}
             list:
                 title: "Lista de Relojes"
-                fields: [ 'nombReloj' ]
+                fields:
+                    - { property: 'nombReloj', label: 'Nombre de Reloj'}
             new:
                 title: "Nuevo Reloj"
+            edit:
+                title: "Editando Reloj"
+##entidad Titular
         Titular:
             label: 'Titular'
             class: AppBundle\Entity\Titular
+            disabled_actions: ['new', 'delete']
+            edit:
+                label: 'Editando Titular del Taller'
+                fields:
+                    - { property: 'nombTitu', label: 'Nombre y Apellido'}
+                    - { property: 'domiTitu', label: 'Domicilio'}
+                    - { property: 'cuitTitu', label: 'Nº CUIT'}
+                    - { property: 'brutTitu', label: 'Nº Ingresos Brutos'}
+                    - { property: 'habiTitu', label: 'Habilitacion'}
+                    - { property: 'legaTitu', label: 'Nº Metrología legal'}
+                    - { property: 'certTitu', label: 'certificado'}
             list:
                 title: "Titular Taller"
-                fields: [ 'nombTitu' ]
-
-
-
+                fields:
+                    - { property: 'nombTitu', label: 'Nombre y Apellido'}
+                    - { property: 'domiTitu', label: 'Domicilio'}
+                    - { property: 'cuitTitu', label: 'Nº CUIT'}
+                    - { property: 'brutTitu', label: 'Nº Ingresos Brutos'}
+                    - { property: 'habiTitu', label: 'Habilitacion'}
+                    - { property: 'legaTitu', label: 'Nº Metrología legal'}
+                    - { property: 'certTitu', label: 'certificado'}
     list:
         max_results: 10

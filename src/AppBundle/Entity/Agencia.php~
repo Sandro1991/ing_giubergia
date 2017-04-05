@@ -51,10 +51,5 @@ class Agencia
     {
         return $this->nombAgen;
     }
-
-    public function __toString()
-    {
-        return(string) $this->nombAgen;
-    }
 }
 

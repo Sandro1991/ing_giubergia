@@ -8,21 +8,25 @@ AppBundle\Entity\Certificado:
         FK_TITU_CERT:
             columns:
                 - id_titu
-        FK_PERMI_CERT:
+        FK_8B8B21056EC521FB:
             columns:
                 - id_permi
-        FK_AGEN_CERT:
-            columns:
-                - id_agen
-        FK_OBLEA_CERT:
-            columns:
-                - id_oblea
-        FK_MONTO_CERT:
-            columns:
-                - id_monto
-        FK_RELOJ_CERT:
+        FK_8B8B2105A982CFD9:
             columns:
                 - id_reloj
+        FK_8B8B2105C1189551:
+            columns:
+                - id_chapa
+        FK_8B8B2105D6E65D60:
+            columns:
+                - id_agen
+        FK_8B8B2105FE57C495:
+            columns:
+                - id_monto
+    uniqueConstraints:
+        nume_chapa:
+            columns:
+                - nume_chapa
     id:
         idCert:
             type: bigint
@@ -34,13 +38,19 @@ AppBundle\Entity\Certificado:
             generator:
                 strategy: IDENTITY
     fields:
-        numePrec:
-            type: string
-            nullable: true
-            length: 255
+        numeChapa:
+            type: integer
+            nullable: false
             options:
-                fixed: false
+                unsigned: false
+            column: nume_chapa
+        numePrec:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
                 comment: 'numero de precinto'
+                default: '0'
             column: nume_prec
         numeReloj:
             type: string
@@ -55,6 +65,46 @@ AppBundle\Entity\Certificado:
             nullable: true
             column: date_save
     manyToOne:
+        idTitu:
+            targetEntity: Titular
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_titu:
+                    referencedColumnName: id_titu
+            orphanRemoval: false
+        idPermi:
+            targetEntity: Permisionario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_permi:
+                    referencedColumnName: id_permi
+            orphanRemoval: false
+        idReloj:
+            targetEntity: Reloj
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_reloj:
+                    referencedColumnName: id_reloj
+            orphanRemoval: false
+        idChapa:
+            targetEntity: Chapa
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_chapa:
+                    referencedColumnName: id_chapa
+            orphanRemoval: false
         idAgen:
             targetEntity: Agencia
             cascade: {  }
@@ -84,45 +134,5 @@ AppBundle\Entity\Certificado:
             joinColumns:
                 id_monto:
                     referencedColumnName: id_monto
-            orphanRemoval: false
-        idOblea:
-            targetEntity: Oblea
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                id_oblea:
-                    referencedColumnName: id_oblea
-            orphanRemoval: false
-        idPermi:
-            targetEntity: Permisionario
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                id_permi:
-                    referencedColumnName: id_permi
-            orphanRemoval: false
-        idReloj:
-            targetEntity: Reloj
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                id_reloj:
-                    referencedColumnName: id_reloj
-            orphanRemoval: false
-        idTitu:
-            targetEntity: Titular
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                id_titu:
-                    referencedColumnName: id_titu
             orphanRemoval: false
     lifecycleCallbacks: {  }

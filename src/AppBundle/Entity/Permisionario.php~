@@ -109,10 +109,5 @@ class Permisionario
     {
         return $this->dniPermi;
     }
-
-    public function __toString()
-    {
-        return(string) $this->nombPermi;
-    }
 }
 

@@ -1,6 +1,10 @@
 AppBundle\Entity\Monto:
     type: entity
     table: monto
+    uniqueConstraints:
+        nomb_tari:
+            columns:
+                - nomb_monto
     id:
         idMonto:
             type: bigint
@@ -12,6 +16,13 @@ AppBundle\Entity\Monto:
             generator:
                 strategy: IDENTITY
     fields:
+        nombMonto:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: nomb_monto
         bDia:
             type: string
             nullable: true
