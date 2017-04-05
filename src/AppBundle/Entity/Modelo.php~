@@ -80,10 +80,5 @@ class Modelo
     {
         return $this->idMarca;
     }
-
-    public function __toString()
-    {
-        return(string) $this->nombMode;
-    }
 }
 

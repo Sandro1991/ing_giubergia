@@ -138,9 +138,38 @@ class Monto
     {
         return $this->mNoch;
     }
+    /**
+     * @var string
+     */
+    private $nombMonto;
+
+
+    /**
+     * Set nombMonto
+     *
+     * @param string $nombMonto
+     *
+     * @return Monto
+     */
+    public function setNombMonto($nombMonto)
+    {
+        $this->nombMonto = $nombMonto;
+
+        return $this;
+    }
+
+    /**
+     * Get nombMonto
+     *
+     * @return string
+     */
+    public function getNombMonto()
+    {
+        return $this->nombMonto;
+    }
 
     public function __toString()
     {
-        return(string) $this->bDia;
+        return(string) $this->nombMonto;
     }
 }

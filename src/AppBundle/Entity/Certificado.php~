@@ -13,9 +13,14 @@ class Certificado
     private $idCert;
 
     /**
-     * @var string
+     * @var integer
      */
-    private $numePrec;
+    private $numeChapa;
+
+    /**
+     * @var integer
+     */
+    private $numePrec = '0';
 
     /**
      * @var string
@@ -26,6 +31,26 @@ class Certificado
      * @var \DateTime
      */
     private $dateSave;
+
+    /**
+     * @var \AppBundle\Entity\Titular
+     */
+    private $idTitu;
+
+    /**
+     * @var \AppBundle\Entity\Permisionario
+     */
+    private $idPermi;
+
+    /**
+     * @var \AppBundle\Entity\Reloj
+     */
+    private $idReloj;
+
+    /**
+     * @var \AppBundle\Entity\Chapa
+     */
+    private $idChapa;
 
     /**
      * @var \AppBundle\Entity\Agencia
@@ -42,26 +67,6 @@ class Certificado
      */
     private $idMonto;
 
-    /**
-     * @var \AppBundle\Entity\Oblea
-     */
-    private $idOblea;
-
-    /**
-     * @var \AppBundle\Entity\Permisionario
-     */
-    private $idPermi;
-
-    /**
-     * @var \AppBundle\Entity\Reloj
-     */
-    private $idReloj;
-
-    /**
-     * @var \AppBundle\Entity\Titular
-     */
-    private $idTitu;
-
 
     /**
      * Get idCert
@@ -74,9 +79,33 @@ class Certificado
     }
 
     /**
+     * Set numeChapa
+     *
+     * @param integer $numeChapa
+     *
+     * @return Certificado
+     */
+    public function setNumeChapa($numeChapa)
+    {
+        $this->numeChapa = $numeChapa;
+
+        return $this;
+    }
+
+    /**
+     * Get numeChapa
+     *
+     * @return integer
+     */
+    public function getNumeChapa()
+    {
+        return $this->numeChapa;
+    }
+
+    /**
      * Set numePrec
      *
-     * @param string $numePrec
+     * @param integer $numePrec
      *
      * @return Certificado
      */
@@ -90,7 +119,7 @@ class Certificado
     /**
      * Get numePrec
      *
-     * @return string
+     * @return integer
      */
     public function getNumePrec()
     {
@@ -143,6 +172,102 @@ class Certificado
     public function getDateSave()
     {
         return $this->dateSave;
+    }
+
+    /**
+     * Set idTitu
+     *
+     * @param \AppBundle\Entity\Titular $idTitu
+     *
+     * @return Certificado
+     */
+    public function setIdTitu(\AppBundle\Entity\Titular $idTitu = null)
+    {
+        $this->idTitu = $idTitu;
+
+        return $this;
+    }
+
+    /**
+     * Get idTitu
+     *
+     * @return \AppBundle\Entity\Titular
+     */
+    public function getIdTitu()
+    {
+        return $this->idTitu;
+    }
+
+    /**
+     * Set idPermi
+     *
+     * @param \AppBundle\Entity\Permisionario $idPermi
+     *
+     * @return Certificado
+     */
+    public function setIdPermi(\AppBundle\Entity\Permisionario $idPermi = null)
+    {
+        $this->idPermi = $idPermi;
+
+        return $this;
+    }
+
+    /**
+     * Get idPermi
+     *
+     * @return \AppBundle\Entity\Permisionario
+     */
+    public function getIdPermi()
+    {
+        return $this->idPermi;
+    }
+
+    /**
+     * Set idReloj
+     *
+     * @param \AppBundle\Entity\Reloj $idReloj
+     *
+     * @return Certificado
+     */
+    public function setIdReloj(\AppBundle\Entity\Reloj $idReloj = null)
+    {
+        $this->idReloj = $idReloj;
+
+        return $this;
+    }
+
+    /**
+     * Get idReloj
+     *
+     * @return \AppBundle\Entity\Reloj
+     */
+    public function getIdReloj()
+    {
+        return $this->idReloj;
+    }
+
+    /**
+     * Set idChapa
+     *
+     * @param \AppBundle\Entity\Chapa $idChapa
+     *
+     * @return Certificado
+     */
+    public function setIdChapa(\AppBundle\Entity\Chapa $idChapa = null)
+    {
+        $this->idChapa = $idChapa;
+
+        return $this;
+    }
+
+    /**
+     * Get idChapa
+     *
+     * @return \AppBundle\Entity\Chapa
+     */
+    public function getIdChapa()
+    {
+        return $this->idChapa;
     }
 
     /**
@@ -215,102 +340,6 @@ class Certificado
     public function getIdMonto()
     {
         return $this->idMonto;
-    }
-
-    /**
-     * Set idOblea
-     *
-     * @param \AppBundle\Entity\Oblea $idOblea
-     *
-     * @return Certificado
-     */
-    public function setIdOblea(\AppBundle\Entity\Oblea $idOblea = null)
-    {
-        $this->idOblea = $idOblea;
-
-        return $this;
-    }
-
-    /**
-     * Get idOblea
-     *
-     * @return \AppBundle\Entity\Oblea
-     */
-    public function getIdOblea()
-    {
-        return $this->idOblea;
-    }
-
-    /**
-     * Set idPermi
-     *
-     * @param \AppBundle\Entity\Permisionario $idPermi
-     *
-     * @return Certificado
-     */
-    public function setIdPermi(\AppBundle\Entity\Permisionario $idPermi = null)
-    {
-        $this->idPermi = $idPermi;
-
-        return $this;
-    }
-
-    /**
-     * Get idPermi
-     *
-     * @return \AppBundle\Entity\Permisionario
-     */
-    public function getIdPermi()
-    {
-        return $this->idPermi;
-    }
-
-    /**
-     * Set idReloj
-     *
-     * @param \AppBundle\Entity\Reloj $idReloj
-     *
-     * @return Certificado
-     */
-    public function setIdReloj(\AppBundle\Entity\Reloj $idReloj = null)
-    {
-        $this->idReloj = $idReloj;
-
-        return $this;
-    }
-
-    /**
-     * Get idReloj
-     *
-     * @return \AppBundle\Entity\Reloj
-     */
-    public function getIdReloj()
-    {
-        return $this->idReloj;
-    }
-
-    /**
-     * Set idTitu
-     *
-     * @param \AppBundle\Entity\Titular $idTitu
-     *
-     * @return Certificado
-     */
-    public function setIdTitu(\AppBundle\Entity\Titular $idTitu = null)
-    {
-        $this->idTitu = $idTitu;
-
-        return $this;
-    }
-
-    /**
-     * Get idTitu
-     *
-     * @return \AppBundle\Entity\Titular
-     */
-    public function getIdTitu()
-    {
-        return $this->idTitu;
     }
 }
 

@@ -51,10 +51,5 @@ class Chapa
     {
         return $this->nombChapa;
     }
-
-    public function __toString()
-    {
-        return(string) $this->nombChapa;
-    }
 }
 

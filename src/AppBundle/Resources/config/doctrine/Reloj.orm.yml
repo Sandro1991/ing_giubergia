@@ -2,9 +2,6 @@ AppBundle\Entity\Reloj:
     type: entity
     table: reloj
     uniqueConstraints:
-        UQ_reloj_name:
-            columns:
-                - nomb_reloj
         nomb_reloj:
             columns:
                 - nomb_reloj

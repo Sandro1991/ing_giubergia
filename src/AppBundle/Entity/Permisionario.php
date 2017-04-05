@@ -112,6 +112,6 @@ class Permisionario
 
     public function __toString()
     {
-        return(string) $this->nombPermi;
+        return(string) $this->dniPermi;
     }
 }

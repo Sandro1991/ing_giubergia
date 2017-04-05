@@ -18,7 +18,7 @@ class Auto
     private $domiAuto;
 
     /**
-     * @var string
+     * @var integer
      */
     private $anioAuto;
 
@@ -65,7 +65,7 @@ class Auto
     /**
      * Set anioAuto
      *
-     * @param string $anioAuto
+     * @param integer $anioAuto
      *
      * @return Auto
      */
@@ -79,7 +79,7 @@ class Auto
     /**
      * Get anioAuto
      *
-     * @return string
+     * @return integer
      */
     public function getAnioAuto()
     {
