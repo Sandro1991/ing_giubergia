@@ -92,6 +92,17 @@ easy_admin:
 ##diseño layout
     site_name: 'Administrador'
     design:
+        menu:
+            - { entity: 'Certificado', icon: 'id-card' }
+            - { entity: 'Auto', icon: 'taxi' }
+            - { entity: 'Permisionario', icon: 'users' }
+            - { entity: 'Agencia', icon: 'adn' }
+            - { entity: 'Monto', icon: 'dollar' }
+            - { entity: 'Chapa', icon: 'list-alt' }
+            - { entity: 'Reloj', icon: 'clock-o' }
+            - { entity: 'Modelo', icon: 'automobile' }
+            - { entity: 'Marca', icon: 'tags' }
+            - { entity: 'Titular', icon: 'user' }
         form_theme: 'vertical'
         brand_color: '#374089'
         assets:
@@ -145,7 +156,7 @@ easy_admin:
                 fields:
                     - { property: 'nombAgen', label: 'Nombre Agencia'}
             list:
-                title: "Agencias Disponibles"
+                title: "Lista de Agencias"
                 fields:
                     - { property: 'nombAgen', label: 'Nombre Agencia'}
             new:
@@ -162,7 +173,7 @@ easy_admin:
                     - { property: 'anioAuto', label: 'Año'}
                     - { property: 'idMode', label: 'Modelo', type: 'easyadmin_autocomplete'}
             list:
-                title: "Dominios Disponibles"
+                title: "Lista de Dominios"
                 fields:
                     - { property: 'domiAuto', label: 'Dominio'}
                     - { property: 'anioAuto', label: 'Año'}
@@ -173,7 +184,7 @@ easy_admin:
                 title: 'Editando Dominio'
 ##entidad Chapa Habilitacion
         Chapa:
-            label: 'Tipo de Habilitación'
+            label: 'Oblea/Licencia'
             class: AppBundle\Entity\Chapa
             form:
                 fields:

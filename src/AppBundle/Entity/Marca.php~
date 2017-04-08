@@ -2,54 +2,32 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Marca
+ *
+ * @ORM\Table(name="marca")
+ * @ORM\Entity
  */
 class Marca
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id_marca", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idMarca;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomb_marca", type="string", length=100, nullable=true)
      */
     private $nombMarca;
 
 
-    /**
-     * Get idMarca
-     *
-     * @return integer
-     */
-    public function getIdMarca()
-    {
-        return $this->idMarca;
-    }
-
-    /**
-     * Set nombMarca
-     *
-     * @param string $nombMarca
-     *
-     * @return Marca
-     */
-    public function setNombMarca($nombMarca)
-    {
-        $this->nombMarca = $nombMarca;
-
-        return $this;
-    }
-
-    /**
-     * Get nombMarca
-     *
-     * @return string
-     */
-    public function getNombMarca()
-    {
-        return $this->nombMarca;
-    }
 }
 

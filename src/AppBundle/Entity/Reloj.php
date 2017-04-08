@@ -2,20 +2,38 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+
 /**
  * Reloj
+ *
+ * @ORM\Table(name="reloj", uniqueConstraints={@ORM\UniqueConstraint(name="nomb_reloj", columns={"nomb_reloj"})})
+ * @ORM\Entity
+ * @UniqueEntity(
+ *     fields={"nombReloj"},
+ *     message= "No se pueden cargar dos Relojes con el mismo nombre"
+ * )
  */
 class Reloj
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id_reloj", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idReloj;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomb_reloj", type="string", length=255, nullable=true)
      */
     private $nombReloj;
+
 
 
     /**

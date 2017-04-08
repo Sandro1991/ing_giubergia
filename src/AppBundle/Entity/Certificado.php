@@ -2,70 +2,129 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+
 /**
  * Certificado
+ *
+ * @ORM\Table(name="certificado", uniqueConstraints={@ORM\UniqueConstraint(name="nume_chapa", columns={"nume_chapa"})}, indexes={@ORM\Index(name="FK_AUTO_CERT", columns={"id_auto"}), @ORM\Index(name="FK_TITU_CERT", columns={"id_titu"}), @ORM\Index(name="FK_8B8B21056EC521FB", columns={"id_permi"}), @ORM\Index(name="FK_8B8B2105A982CFD9", columns={"id_reloj"}), @ORM\Index(name="FK_8B8B2105C1189551", columns={"id_chapa"}), @ORM\Index(name="FK_8B8B2105D6E65D60", columns={"id_agen"}), @ORM\Index(name="FK_8B8B2105FE57C495", columns={"id_monto"})})
+ * @ORM\Entity
+ * @UniqueEntity(
+ *     fields={"numeChapa"},
+ *     message= "No se pueden cargar dos habilitaciones con el mismo número"
+ * )
  */
 class Certificado
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id_cert", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idCert;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="nume_chapa", type="integer", nullable=false)
      */
     private $numeChapa;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="nume_prec", type="bigint", nullable=true)
      */
     private $numePrec = '0';
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nume_reloj", type="string", length=255, nullable=true)
      */
     private $numeReloj = 's/n';
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_save", type="datetime", nullable=true)
      */
     private $dateSave;
 
     /**
      * @var \AppBundle\Entity\Titular
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Titular")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_titu", referencedColumnName="id_titu")
+     * })
      */
     private $idTitu;
 
     /**
      * @var \AppBundle\Entity\Permisionario
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Permisionario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_permi", referencedColumnName="id_permi")
+     * })
      */
     private $idPermi;
 
     /**
      * @var \AppBundle\Entity\Reloj
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Reloj")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_reloj", referencedColumnName="id_reloj")
+     * })
      */
     private $idReloj;
 
     /**
      * @var \AppBundle\Entity\Chapa
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Chapa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_chapa", referencedColumnName="id_chapa")
+     * })
      */
     private $idChapa;
 
     /**
      * @var \AppBundle\Entity\Agencia
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Agencia")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_agen", referencedColumnName="id_agen")
+     * })
      */
     private $idAgen;
 
     /**
      * @var \AppBundle\Entity\Auto
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Auto")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_auto", referencedColumnName="id_auto")
+     * })
      */
     private $idAuto;
 
     /**
      * @var \AppBundle\Entity\Monto
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Monto")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_monto", referencedColumnName="id_monto")
+     * })
      */
     private $idMonto;
+
 
 
     /**
