@@ -2,30 +2,52 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+
 /**
  * Permisionario
+ *
+ * @ORM\Table(name="permisionario", uniqueConstraints={@ORM\UniqueConstraint(name="dni_permi", columns={"dni_permi"})})
+ * @ORM\Entity
+ * @UniqueEntity(
+ *     fields={"dniPermi"},
+ *     message= "No se pueden cargar dos permisionarios con el mismo DNI, verifique el número ingresado"
+ * )
  */
 class Permisionario
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id_permi", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idPermi;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomb_permi", type="string", length=100, nullable=true)
      */
     private $nombPermi;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="dire_permi", type="string", length=100, nullable=true)
      */
     private $direPermi;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="dni_permi", type="string", length=20, nullable=true)
      */
     private $dniPermi;
+
 
 
     /**

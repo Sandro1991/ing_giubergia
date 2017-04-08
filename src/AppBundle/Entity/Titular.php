@@ -2,50 +2,74 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Titular
+ *
+ * @ORM\Table(name="titular")
+ * @ORM\Entity
  */
 class Titular
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id_titu", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomb_titu", type="string", length=100, nullable=true)
      */
     private $nombTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="domi_titu", type="string", length=100, nullable=true)
      */
     private $domiTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="cuit_titu", type="string", length=20, nullable=true)
      */
     private $cuitTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="brut_titu", type="string", length=50, nullable=true)
      */
     private $brutTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="habi_titu", type="string", length=20, nullable=true)
      */
     private $habiTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="lega_titu", type="string", length=20, nullable=true)
      */
     private $legaTitu;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="cert_titu", type="string", length=20, nullable=true)
      */
     private $certTitu;
+
 
 
     /**
