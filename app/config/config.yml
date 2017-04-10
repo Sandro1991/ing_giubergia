@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -148,10 +148,13 @@ easy_admin:
                 title: "Nuevo Certificado"
             edit:
                 title: 'Editando Certificado'
+            show:
+                title: 'Certificado'
 ##entidad Agencia
         Agencia:
             label: 'Agencias'
             class: AppBundle\Entity\Agencia
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'nombAgen', label: 'Nombre Agencia'}
@@ -167,6 +170,7 @@ easy_admin:
         Auto:
             label: 'Dominios'
             class: AppBundle\Entity\Auto
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'domiAuto', label: 'Dominio del Vehículo'}
@@ -186,6 +190,7 @@ easy_admin:
         Chapa:
             label: 'Oblea/Licencia'
             class: AppBundle\Entity\Chapa
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'nombChapa', label: 'Tipo Habilitación'}
@@ -201,6 +206,7 @@ easy_admin:
         Marca:
             label: 'Marcas'
             class: AppBundle\Entity\Marca
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'nombMarca', label: 'Nombre Marca'}
@@ -216,6 +222,7 @@ easy_admin:
         Modelo:
             label: 'Modelos'
             class: AppBundle\Entity\Modelo
+            disabled_actions: ['show']
             form:
                 - { property: 'nombMode', label: 'Nombre Modelo'}
                 - { property: 'idMarca', label: 'Marca Perteneciente', type: 'easyadmin_autocomplete'}
@@ -232,6 +239,7 @@ easy_admin:
         Monto:
             label: 'Tarifa'
             class: AppBundle\Entity\Monto
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'nombMonto', label: 'Nombre Tarifa'}
@@ -255,6 +263,7 @@ easy_admin:
         Permisionario:
             label: 'Permisionarios'
             class: AppBundle\Entity\Permisionario
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'nombPermi', label: 'Nombre y Apellido del Permisionario'}
@@ -274,6 +283,7 @@ easy_admin:
         Reloj:
             label: 'Relojes'
             class: AppBundle\Entity\Reloj
+            disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'nombReloj', label: 'Nombre de Reloj'}
@@ -312,3 +322,11 @@ easy_admin:
                     - { property: 'certTitu', label: 'certificado'}
     list:
         max_results: 10
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "noreply@nicoodev.com"
+        sender_name: "No Reply"

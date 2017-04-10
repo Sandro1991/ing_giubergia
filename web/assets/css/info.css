@@ -1,0 +1,23 @@
+#info {
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+#info .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info {
+    margin: 20px;
+    line-height: 25px;
+}
+
+.info img {
+    border: 2px solid #dd3a3a;
+    width: 200px;
+    height: 100px;
+   
+}
