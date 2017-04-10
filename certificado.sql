@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-04-2017 a las 10:25:08
--- Versión del servidor: 5.7.17-0ubuntu0.16.04.1
--- Versión de PHP: 7.0.15-0ubuntu0.16.04.4
+-- Tiempo de generación: 10-04-2017 a las 14:13:17
+-- Versión del servidor: 5.7.17-0ubuntu0.16.04.2
+-- Versión de PHP: 5.6.30-9+deb.sury.org~xenial+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -66,7 +66,7 @@ INSERT INTO `agencia` (`id_agen`, `nomb_agen`) VALUES
 
 CREATE TABLE `auto` (
   `id_auto` bigint(20) NOT NULL,
-  `domi_auto` varchar(6) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `domi_auto` varchar(7) DEFAULT NULL,
   `anio_auto` int(10) DEFAULT NULL,
   `id_mode` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -92,12 +92,19 @@ CREATE TABLE `certificado` (
   `id_agen` bigint(20) DEFAULT NULL,
   `nume_chapa` int(100) NOT NULL,
   `id_chapa` bigint(20) DEFAULT NULL,
-  `nume_prec` bigint(100) DEFAULT '0' COMMENT 'numero de precinto',
-  `nume_reloj` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT 's/n',
+  `nume_prec` bigint(20) DEFAULT NULL,
+  `nume_reloj` varchar(255) DEFAULT NULL,
   `id_monto` bigint(20) DEFAULT NULL,
   `date_save` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `id_titu` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `certificado`
+--
+
+INSERT INTO `certificado` (`id_cert`, `id_permi`, `id_auto`, `id_reloj`, `id_agen`, `nume_chapa`, `id_chapa`, `nume_prec`, `nume_reloj`, `id_monto`, `date_save`, `id_titu`) VALUES
+(1, 1, 1, 2, 2, 120, 1, 212414, 's/n', 2, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -117,6 +124,34 @@ CREATE TABLE `chapa` (
 INSERT INTO `chapa` (`id_chapa`, `nomb_chapa`) VALUES
 (1, 'Licencia'),
 (2, 'Oblea');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fos_user`
+--
+
+CREATE TABLE `fos_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `confirmation_token` varchar(180) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `fos_user`
+--
+
+INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`) VALUES
+(1, 'admin', 'admin', 'ingenieriagiubergia@gmail.com', 'ingenieriagiubergia@gmail.com', 1, NULL, '$2y$13$a9iHKmCFxVUHvVjODwUkBeGPMAySztP2kRN1SQdyxa2wlCywuYXeC', '2017-04-10 13:39:50', NULL, NULL, 'a:1:{i:0;s:10:"ROLE_ADMIN";}');
 
 -- --------------------------------------------------------
 
@@ -144,7 +179,7 @@ INSERT INTO `marca` (`id_marca`, `nomb_marca`) VALUES
 (8, 'Opel'),
 (9, 'Rolls-Royce'),
 (10, 'Subaru'),
-(11, 'Volkswagen'),
+(11, 'VOLKSWAGEN'),
 (12, 'Alfa Romeo'),
 (13, 'Isuzu'),
 (14, 'Peugeot'),
@@ -189,14 +224,14 @@ INSERT INTO `modelo` (`id_mode`, `nomb_mode`, `id_marca`) VALUES
 (1, 'FIESTA KINETIC', 1),
 (2, 'FOCUS', 1),
 (3, 'DUNA', 2),
-(4, 'SIERRA', 1),
+(4, 'SIERRA', 23),
 (5, 'COROLLA', NULL),
 (6, 'CORSA', NULL),
 (7, 'AVEO', NULL),
 (8, 'CLASICC', NULL),
-(9, 'MERIVA', NULL),
-(10, 'GOL TREND', NULL),
-(11, 'FOX', NULL);
+(9, 'MERIVA', 22),
+(10, 'GOL TREND', 11),
+(11, 'FOX', 11);
 
 -- --------------------------------------------------------
 
@@ -232,6 +267,13 @@ CREATE TABLE `permisionario` (
   `dire_permi` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `dni_permi` varchar(20) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `permisionario`
+--
+
+INSERT INTO `permisionario` (`id_permi`, `nomb_permi`, `dire_permi`, `dni_permi`) VALUES
+(1, 'sandro mañez', 'peron oeste 03', '3276132');
 
 -- --------------------------------------------------------
 
@@ -322,6 +364,15 @@ ALTER TABLE `chapa`
   ADD UNIQUE KEY `nomb_chapa` (`nomb_chapa`);
 
 --
+-- Indices de la tabla `fos_user`
+--
+ALTER TABLE `fos_user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
+  ADD UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
+  ADD UNIQUE KEY `UNIQ_957A6479C05FB297` (`confirmation_token`);
+
+--
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
@@ -380,12 +431,17 @@ ALTER TABLE `auto`
 -- AUTO_INCREMENT de la tabla `certificado`
 --
 ALTER TABLE `certificado`
-  MODIFY `id_cert` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cert` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `chapa`
 --
 ALTER TABLE `chapa`
   MODIFY `id_chapa` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `fos_user`
+--
+ALTER TABLE `fos_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
@@ -430,12 +486,12 @@ ALTER TABLE `auto`
 -- Filtros para la tabla `certificado`
 --
 ALTER TABLE `certificado`
-  ADD CONSTRAINT `FK_8B8B210562033D3B` FOREIGN KEY (`id_titu`) REFERENCES `titular` (`id_titu`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_8B8B21056EC521FB` FOREIGN KEY (`id_permi`) REFERENCES `permisionario` (`id_permi`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_8B8B2105A982CFD9` FOREIGN KEY (`id_reloj`) REFERENCES `reloj` (`id_reloj`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_8B8B2105C1189551` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id_chapa`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_8B8B2105D6E65D60` FOREIGN KEY (`id_agen`) REFERENCES `agencia` (`id_agen`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_8B8B2105ED9A39F8` FOREIGN KEY (`id_auto`) REFERENCES `auto` (`id_auto`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_8B8B21055438ED73` FOREIGN KEY (`id_chapa`) REFERENCES `chapa` (`id_chapa`),
+  ADD CONSTRAINT `FK_8B8B210562033D3B` FOREIGN KEY (`id_titu`) REFERENCES `titular` (`id_titu`),
+  ADD CONSTRAINT `FK_8B8B21056EC521FB` FOREIGN KEY (`id_permi`) REFERENCES `permisionario` (`id_permi`),
+  ADD CONSTRAINT `FK_8B8B2105A982CFD9` FOREIGN KEY (`id_reloj`) REFERENCES `reloj` (`id_reloj`),
+  ADD CONSTRAINT `FK_8B8B2105D6E65D60` FOREIGN KEY (`id_agen`) REFERENCES `agencia` (`id_agen`),
+  ADD CONSTRAINT `FK_8B8B2105ED9A39F8` FOREIGN KEY (`id_auto`) REFERENCES `auto` (`id_auto`),
   ADD CONSTRAINT `FK_8B8B2105FE57C495` FOREIGN KEY (`id_monto`) REFERENCES `monto` (`id_monto`) ON DELETE NO ACTION;
 
 --

@@ -1,0 +1,495 @@
+#blog h2, h3, h4 {
+    text-align: center;
+}
+
+#blog h3{
+    background: #a8a8a8;
+    width: 200px;
+    margin: auto;
+    
+}
+
+.vermas {
+    font-size: 10px;
+    width: 120px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    border:1px solid #000;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border-radius: 50px;
+}
+
+.vermas:hover {
+    color: aliceblue;
+    background: #f7f7f7;
+    transition: 0.5s;
+}
+.contenedor p {
+    font-size: 13px;
+}
+
+.vermas a {
+    text-decoration: none;
+    color: #000;
+}
+
+#blog a {
+    text-decoration: none;
+    color: #000;
+}
+
+#blog .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:3px solid #a8a8a8;
+    background: #f7f7f7;
+    position: relative;
+}
+
+#blog article {
+    margin: 20px;
+}
+
+#blog .img1 img{
+    width: 238px;
+    height: 100%;
+    max-width: 280px;
+    position: relative;
+     z-index: 1000%;
+}
+
+#blog .img2 img{
+    width:240px;
+    height: 100%;
+    max-width: 280px;
+    position: relative;
+     z-index: 1000%;
+}
+
+#blog .img3 img{
+    width: 240px;
+    height: 100%;
+    max-width: 280px;
+    position: relative;
+     z-index: 1000%;
+}
+
+#blog .img4 img{
+    width: 240px;
+    height: 100%;
+    max-width: 280px;
+    position: relative;
+     z-index: 1000%;
+}
+
+#blog .img5 img{
+    width: 240px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+    position: relative;
+}
+
+#blog .img6 img{
+    width: 238px;
+    height: 100%;
+    max-width: 280px;
+ z-index: 1000%;
+    position: relative;
+}
+
+.opcpro {
+    width: 200px;
+    text-decoration:underline
+}
+
+.opctick{
+    width: 200px;
+    text-decoration: underline;
+}
+
+
+/*estilos taximetros.html*/
+#blogtaximetros h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background: #a8a8a8;
+    width: 230px;
+    margin: auto;
+}
+
+#blogtaximetros .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 3px solid #a8a8a8;
+    background: #f7f7f7;
+    position: relative;
+}
+
+#blogtaximetros .img3 {
+    width: 500px;
+    margin: auto;
+    position: relative;
+}
+
+#blogtaximetros .img3 img{
+    width: 400px;
+    height: 100%;
+    position: relative;
+     z-index: 1000%;
+}
+
+
+#blogtaximetros article {
+    margin: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    #blogtaximetros .img3 {
+        margin: auto;
+        width: 240px;
+    }
+    
+    #blogtaximetros .img3 img {
+        width: 240px;
+        margin: auto;
+    }
+}
+
+
+
+/*fin estilos taximetros.html */
+
+
+.contenedortex{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/*Estilos tacografos*/
+
+
+/*estilos tacografo.html*/
+#blogtacografos h3 {
+    background: #a8a8a8;
+    width: 240px;
+    margin: auto;
+}
+
+
+
+#blogtacografos .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 3px solid #a8a8a8;
+    background: #f7f7f7;
+    position: relative;
+}
+
+#blogtacografos .img3 {
+    width: 400px;
+    margin: auto;
+    position: relative;
+}
+
+#blogtacografos .img3 img{
+    width: 400px;
+    height: 100%;
+    position: relative;
+     z-index: 1000%;
+}
+
+
+#blogtacografos article {
+    margin: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    #blogtacografos .img3 {
+        margin: auto;
+        width: 240px;
+    }
+    
+    #blogtacografos .img3 img {
+        width: 240px;
+        margin: auto;
+    }
+}
+/*fin estilo tacografo*/
+
+/*estlo accesorio */
+#blogaccesorios h3 {
+    background: #a8a8a8;
+    width: 240px;
+    margin: auto;
+}
+
+#blogaccesorios .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 3px solid #a8a8a8;
+    background: #f7f7f7;
+    position: relative;
+}
+
+#blogaccesorios .img3 {
+    width: 400px;
+    margin: auto;
+    position: relative;
+}
+
+#blogaccesorios .img3 img{
+    width: 400px;
+    height: 100%;
+    position: relative;
+     z-index: 1000%;
+}
+
+
+#blogaccesorios article {
+    margin: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    #blogaccesorios .img3 {
+        margin: auto;
+        width: 240px;
+    }
+    
+    #blogaccesorios .img3 img {
+        width: 240px;
+        margin: auto;
+    }
+}
+/* fin estilo accesorio */
+
+/*estlo localizadores */
+#bloglocalizadores h3 {
+    background: #a8a8a8;
+    width: 240px;
+    margin: auto;
+}
+
+#bloglocalizadores .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 3px solid #a8a8a8;
+    background: #f7f7f7;
+    position: relative;
+}
+
+#bloglocalizadores .img3 {
+    width: 400px;
+    margin: auto;
+}
+
+#bloglocalizadores .img3 img{
+    width: 400px;
+    height: 100%;
+    position: relative;
+    z-index: 1000%;
+}
+
+
+#bloglocalizadores article {
+    margin: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    #bloglocalizadores .img3 {
+        margin: auto;
+        width: 240px;
+    }
+    
+    #bloglocalizadores .img3 img {
+        width: 240px;
+        margin: auto;
+    }
+}
+/* fin estilo localizadores */
+
+
+
+/*Estilos blog HANDYS*/
+
+#bloghandys article {
+    margin: 20px;
+}
+
+#bloghandys .img1 img{
+    width: 238px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img2 img{
+    width:240px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img3 img{
+    width: 200px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img4 img{
+    width: 180px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img5 img{
+    width: 150px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+
+
+
+#bloghandys .img7 img{
+    width: 235px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img8 img{
+    width: 285px;
+    height: 100%;
+    max-width: 280px;
+}
+
+#bloghandys .img9 img{
+    width: 230px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img10 img{
+    width: 220px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#bloghandys .img11 img{
+    width: 230px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+
+#bloghandys h2, h3, h4 {
+    text-align: center;
+}
+
+#bloghandys h3{
+    background: #a8a8a8;
+    width: 200px;
+    margin: auto;
+    
+}
+
+
+
+#bloghandys .img6 img{
+    width: 238px;
+    height: 100%;
+    max-width: 280px;
+}
+
+#bloghandys .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:3px solid #a8a8a8;
+    background: #f7f7f7;
+}
+/*terminan estilos handy*/
+
+/*Estilos blog HANDYS*/
+
+#blogradios article {
+    margin: 20px;
+}
+
+#blogradios .img1 img{
+    width: 308px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#blogradios .img2 img{
+    width:202px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#blogradios .img3 img{
+    width: 200px;
+    height: 100%;
+    max-width: 280px;
+ z-index: 1000%;
+}
+
+#blogradios .img4 img{
+    width: 220px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+#blogradios .img5 img{
+    width: 220px;
+    height: 100%;
+    max-width: 280px;
+     z-index: 1000%;
+}
+
+
+#blogradios h2, h3, h4 {
+    text-align: center;
+}
+
+#blogradios h3{
+    background: #a8a8a8;
+    width: 200px;
+    margin: auto;
+    
+}
+
+#blogradios .img6 img{
+    width: 238px;
+    height: 100%;
+    max-width: 280px;
+}
+
+#blogradios .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:3px solid #a8a8a8;
+    background: #f7f7f7;
+}
+/*termminan estilos radio*/
