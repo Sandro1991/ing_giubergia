@@ -70,25 +70,6 @@ swiftmailer:
     spool: { type: memory }
 
 easy_admin:
-##acciones
-    list:
-        actions:
-            - { name: 'edit', label: 'Modificar'}
-            - { name: 'new', label: 'Nuevo'}
-            - { name: 'delete', label: 'Eliminar'}
-            - { name: 'search', label: 'Buscar'}
-    show:
-        actions:
-            - { name: 'edit', label: 'Modificar'}
-            - { name: 'delete', label: 'Eliminar'}
-            - { name: 'list', label: 'Volver'}
-    new:
-        actions:
-            - { name: 'list', label: 'Volver al Listado'}
-    edit:
-        actions:
-            - { name: 'delete', label: 'Eliminar'}
-            - { name: 'list', label: 'Volver al Listado'}
 ##diseño layout
     site_name: 'Administrador'
     design:
@@ -330,3 +311,8 @@ fos_user:
     from_email:
         address: "noreply@nicoodev.com"
         sender_name: "No Reply"
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /var/www/symfony/ing_giubergia/web/assets/impresiones
+        options:    []
