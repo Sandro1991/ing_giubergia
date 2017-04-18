@@ -400,4 +400,9 @@ class Certificado
     {
         return $this->idMonto;
     }
+
+    public function __toString()
+    {
+        return(string) $this->idCert;
+    }
 }
