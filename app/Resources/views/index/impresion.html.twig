@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+    <head>
+        <meta>
+        <link rel="stylesheet" href="{{ asset('assets/css/print.css') }}"/>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <div class="nombTitu">
+            {{ cert.idTitu.nombTitu }}
+        </div>
+        <div class="domiTitu">
+            {{ cert.idTitu.domiTitu }}
+        </div>
+        <div class="brutTitu">
+            {{ cert.idTitu.brutTitu }}
+        </div>
+        <div class="cuitTitu">
+            {{ cert.idTitu.cuitTitu }}
+        </div>
+        <div class="habiTitu">
+            {{ cert.idTitu.habiTitu}}
+        </div>
+        <div class="legaTitu">
+            {{ cert.idTitu.legaTitu}}
+        </div>
+        <div class="fecha">
+            {{ "now"|date("d/m/Y") }}
+        </div>
+        <div class="nombPermi">
+            {{ cert.idPermi.nombPermi }}
+        </div>
+        <div class="dniPermi">
+            {{ cert.idPermi.dniPermi }}
+        </div>
+        <div class="direPermi">
+            {{ cert.idPermi.direPermi }}
+        </div>
+        {% if cert.idChapa.nombChapa == 'Licencia' %}
+            <div class="Licencia">
+                {{ cert.numeChapa }}
+            </div>
+            <div class="vacio">
+                ----
+            </div>
+        {% else %}
+            <div class="vacio">
+                ----
+            </div>
+            <div class="Oblea">
+                {{ cert.numeChapa }}
+            </div>
+        {% endif %}
+        <div class="nombAgen">
+            {{ cert.idAgen.nombAgen }}
+        </div>
+        <div class="marcaAuto">
+            {{ cert.idAuto.idMode.idMarca.nombMarca}}
+        </div>
+        <div class="modeAuto">
+            {{ cert.idAuto.idMode.nombMode }}
+        </div>
+        <div class="anioAuto">
+            {{ cert.idAuto.anioAuto }}
+        </div>
+        <div class="domiAuto">
+            {{ cert.idAuto.domiAuto }}
+        </div>
+        <div class="nombReloj">
+            {{ cert.idReloj.nombReloj }}
+        </div>
+        <div class="numeReloj">
+            {{ cert.numeReloj }}
+        </div>
+        <div class="numePrec">
+            {{ cert.numePrec }}
+        </div>
+        <div class="bdia">
+            {{ cert.idMonto.bDia }}
+        </div>
+        <div class="bnoch">
+            {{ cert.idMonto.bNoch }}
+        </div>
+        <div class="mdia">
+            {{ cert.idMonto.mDia }}
+        </div>
+        <div class="mnoch">
+            {{ cert.idMonto.mNoch }}
+        </div>
+        <div class="taller">
+            <h4>
+                TALLER NUMERO <br>
+                G 1168/{{ cert.idTitu.legaTitu }}
+            </h4>
+            <h5>
+                Ing. GUILLERMO DANIEL GIUBERGIA
+            </h5>
+            <p>
+
+            </p>
+        </div>
+
+
+
+
+    </body>

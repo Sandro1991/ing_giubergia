@@ -2,9 +2,14 @@
 
 namespace AppBundle\Controller;
 
+
+use AppBundle\Entity\Reloj;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class IndexController extends Controller
 {
@@ -63,25 +68,15 @@ class IndexController extends Controller
         return $this->render(':index:tacografos.html.twig');
     }
 
-
+    /**
+     * @Route("/taxim", name="taxim")
+     */
     public function taximetrosAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render(':index:taximetros.html.twig');
     }
 
-    /**
-     * @Route("/printf", name="printf")
-     */
-    public function printAction()
-    {
-        $this->get('knp_snappy.pdf')->generateFromHtml(
-            $this->renderView(
-                'index/index.html.twig',
-                array(
-                )
-            ),
-            '/web/assets/impresiones/certificado.pdf'
-        );
-    }
+
+
 }
