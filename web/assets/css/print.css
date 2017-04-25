@@ -2,100 +2,157 @@ body {
     background-image: none;
 }
 
-.nombTitu{
+div{
+    font-family: "Arial", "Helvetica Neue", sans-serif;
+    font-style: normal;
     position: relative;
-    border: 12px solid;
+    font-size: 12pt;
+}
+
+.nombTitu{
+    padding-top: 57pt;
+    margin-left: 71pt;
 }
 
 .domiTitu{
-    position: relative;
+    margin-top: 5pt;
+    margin-left: 75pt;
 }
 
 .brutTitu{
-    position: relative;
+    margin-top: 5pt;
+    margin-left: 73pt;
 }
 
 .cuitTitu{
-    position: relative;
+    margin-top: -16pt;
+    margin-left: 225pt;
 }
 
 .habiTitu{
-    position: relative;
+    margin-top: 5pt;
+    margin-left: 38pt;
 }
 
 .legaTitu{
-    position: relative;
+    margin-top: -16pt;
+    margin-left: 267pt;
 }
 
 .fecha{
-    position: relative;
+    margin-top: -15pt;
+    margin-left: 405pt;
 }
 
 .nombPermi{
-    position: relative;
+    margin-top: 20pt;
+    margin-left: 50pt;
 }
-
+.dniPermi{
+    margin-top: 5pt;
+    margin-left: 54pt;
+}
+.direPermi{
+    margin-top: 5pt;
+    margin-left: 52pt;
+}
 .licencia{
-    position: relative;
+    margin-top: 5pt;
+    margin-left: 64pt;
 }
 
 .oblea{
-    position: relative;
+    margin-top: -15pt;
+    margin-left: 263pt;
 }
 
-.vacio{
-    position: relative;
+.vacio1{
+    margin-top: -15pt;
+    margin-left: 263pt;
+}
+
+.vacio2{
+    margin-top: 5pt;
+    margin-left: 64pt;
 }
 
 .nombAgen{
+    margin-top: -15pt;
+    margin-left: 400pt;
 
 }
 
 .marcaAuto{
-
+    margin-top: 6pt;
+    margin-left: 52pt;
 }
 
 .modeAuto{
-
+    margin-top: -14pt;
+    margin-left: 235pt;
 }
 
 .anioAuto{
+    margin-top: -14pt;
+    margin-left: 300pt;
 
 }
 
 .domiAuto{
-
+    margin-top: -14pt;
+    margin-left: 412pt;
 }
 
 .nombReloj{
-
+    margin-top: 5pt;
+    margin-left: 53pt;
 }
 
 .numeReloj{
-
+    margin-top: -14pt;
+    margin-left: 234pt;
 }
 
 .numePrec{
-
+    margin-top: -14pt;
+    margin-left: 422pt;
 }
 
 .bdia{
-
+    margin-top: 20pt;
+    margin-left: 69pt;
 }
 
 .bnoch{
-
+    margin-top: -2pt;
+    margin-left: 69pt;
 }
-
 .mdia{
-
+    margin-top: 1pt;
+    margin-left: 12pt;
 }
-
 .mnoch{
-
+    margin-top: 1pt;
+    margin-left: 12pt;
 }
-
 
 .taller{
+    font-size: 10pt;
+    font-weight: bold;
+    margin-top: -55pt;
+    margin-left: 400pt;
+}
 
+.tallernum{
+    font-size: 10pt;
+    font-weight: bold;
+    margin-top: -1pt;
+    margin-left: 413pt;
+}
+
+.tallernom{
+    font-weight: bold;
+    font-size: 7pt;
+    margin-top: 1pt;
+    margin-left: 390pt;
 }

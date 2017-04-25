@@ -1,7 +1,5 @@
 <!DOCTYPE html>
     <head>
-        <meta>
-        <link rel="stylesheet" href="{{ asset('assets/css/print.css') }}"/>
         <meta charset="UTF-8" />
     </head>
     <body>
@@ -17,6 +15,7 @@
         <div class="cuitTitu">
             {{ cert.idTitu.cuitTitu }}
         </div>
+
         <div class="habiTitu">
             {{ cert.idTitu.habiTitu}}
         </div>
@@ -36,17 +35,17 @@
             {{ cert.idPermi.direPermi }}
         </div>
         {% if cert.idChapa.nombChapa == 'Licencia' %}
-            <div class="Licencia">
+            <div class="licencia">
                 {{ cert.numeChapa }}
             </div>
-            <div class="vacio">
-                ----
+            <div class="vacio1">
+                ---
             </div>
         {% else %}
-            <div class="vacio">
-                ----
+            <div class="vacio2">
+                ---
             </div>
-            <div class="Oblea">
+            <div class="oblea">
                 {{ cert.numeChapa }}
             </div>
         {% endif %}
@@ -87,16 +86,13 @@
             {{ cert.idMonto.mNoch }}
         </div>
         <div class="taller">
-            <h4>
-                TALLER NUMERO <br>
-                G 1168/{{ cert.idTitu.legaTitu }}
-            </h4>
-            <h5>
-                Ing. GUILLERMO DANIEL GIUBERGIA
-            </h5>
-            <p>
-
-            </p>
+            TALLER NUMERO
+        </div>
+        <div class="tallernum">
+            G 1168/{{ cert.idTitu.legaTitu }}
+        </div>
+        <div class="tallernom">
+            Ing. GUILLERMO DANIEL GIUBERGIA
         </div>
 
 

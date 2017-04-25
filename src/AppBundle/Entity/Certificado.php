@@ -403,6 +403,6 @@ class Certificado
 
     public function __toString()
     {
-        return(string) $this->idCert;
+        return(string) $this->numeChapa;
     }
 }
