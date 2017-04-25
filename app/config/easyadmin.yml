@@ -1,6 +1,13 @@
 easy_admin:
+    list:
+        actions:
+            - { name: 'edit', icon: 'pencil', label: ''}
+            - { name: 'delete', icon: 'trash-o', label: ''}
+    new:
+        actions:
+            - { name: 'list', icon: 'arrow-left', label: 'Volver al listado'}
 ##diseño layout
-    site_name: 'Administrador'
+    site_name: 'Administrador Ingeniería Giubergia'
     design:
         menu:
             - { entity: 'Certificado', icon: 'id-card' }
@@ -17,6 +24,7 @@ easy_admin:
         brand_color: '#374089'
         assets:
             favicon: '/assets/icons/logo_giubergia_ingenieria.png'
+
 ##formato de fechas y horas
     formats:
         date:     'd/m/Y'
@@ -24,28 +32,31 @@ easy_admin:
         datetime: 'd/m/Y H:i:s'
 
     entities:
+
 ##entidad certificado
         Certificado:
             label: 'Certificados'
             class: AppBundle\Entity\Certificado
+            controller: AppBundle\Controller\Admin\CertificadoController
             disabled_actions: ['show']
             form:
                 fields:
                     - { type: 'group', css_class: 'col-sm-6'}
-                    - { property: 'idChapa', label: 'Tipo de Habilitación', type: 'easyadmin_autocomplete' }
+                    - { property: 'idChapa', label: 'Tipo de Habilitación' }
                     - { property: 'numeChapa', label: 'Nº Licencia/Oblea' }
-                    - { property: 'idAuto', label: 'Dominio', type: 'easyadmin_autocomplete' }
-                    - { property: 'idPermi', label: 'Permisionario', type: 'easyadmin_autocomplete' }
-                    - { property: 'idAgen', label: 'Agencia', type: 'easyadmin_autocomplete' }
+                    - { property: 'idAuto', label: 'Dominio' }
+                    - { property: 'idPermi', label: 'Permisionario' }
+                    - { property: 'idAgen', label: 'Agencia'}
                     - { type: 'group', css_class: 'col-sm-6'}
                     - { property: 'numePrec', label: 'Nº Precinto' }
-                    - { property: 'idReloj', label: 'Reloj', type: 'easyadmin_autocomplete' }
+                    - { property: 'idReloj', label: 'Reloj' }
                     - { property: 'numeReloj', label: 'Nº Reloj' }
-                    - { property: 'idMonto', label: 'Tarifa', type: 'easyadmin_autocomplete'}
-                    - { property: 'idTitu', label: 'Titular', type: 'easyadmin_autocomplete' }
+                    - { property: 'idMonto', label: 'Tarifa'}
+                    - { property: 'idTitu', label: 'Titular' }
             list:
                 title: "Lista de Certificados"
-                actions: ['imprimir']
+                actions:
+                    - { name: 'imprimir', label: '', icon: 'print'}
                 fields:
                     - { property: 'numeChapa', label: 'Nº Oblea/Licencia'}
                     - { property: 'idAuto', label: 'Dominio'}
@@ -55,8 +66,11 @@ easy_admin:
                     - { property: 'numeReloj', label: 'Nº Reloj'}
                     - { property: 'idAgen', label: 'Agencia'}
                     - { property: 'idMonto', label: 'Tarifa'}
+                sort: 'dateSave'
             new:
                 title: "Nuevo Certificado"
+                actions:
+                    - { name: 'imprimirnew', label: 'Imprimir y Guardar', icon: 'print', class: 'btn-success'}
 
             edit:
                 title: 'Editando Certificado'
@@ -82,12 +96,13 @@ easy_admin:
         Auto:
             label: 'Dominios'
             class: AppBundle\Entity\Auto
+            controller: AppBundle\Controller\Admin\AutoController
             disabled_actions: ['show']
             form:
                 fields:
                     - { property: 'domiAuto', label: 'Dominio del Vehículo'}
                     - { property: 'anioAuto', label: 'Año'}
-                    - { property: 'idMode', label: 'Modelo', type: 'easyadmin_autocomplete'}
+                    - { property: 'idMode', label: 'Modelo'}
             list:
                 title: "Lista de Dominios"
                 fields:
@@ -134,10 +149,11 @@ easy_admin:
         Modelo:
             label: 'Modelos'
             class: AppBundle\Entity\Modelo
+            controller: AppBundle\Controller\Admin\ModeloController
             disabled_actions: ['show']
             form:
                 - { property: 'nombMode', label: 'Nombre Modelo'}
-                - { property: 'idMarca', label: 'Marca Perteneciente', type: 'easyadmin_autocomplete'}
+                - { property: 'idMarca', label: 'Marca Perteneciente'}
             list:
                 title: "Lista de Modelos"
                 fields:
