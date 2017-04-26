@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Titular
@@ -13,6 +14,55 @@ use Doctrine\ORM\Mapping as ORM;
 class Titular
 {
     /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="nomb_titu", type="string", length=100, nullable=true)
+     */
+    private $nombTitu;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="domi_titu", type="string", length=100, nullable=true)
+     */
+    private $domiTitu;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="cuit_titu", type="string", length=20, nullable=true)
+     */
+    private $cuitTitu;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="brut_titu", type="string", length=50, nullable=true)
+     */
+    private $brutTitu;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="habi_titu", type="string", length=20, nullable=true)
+     */
+    private $habiTitu;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="lega_titu", type="string", length=20, nullable=true)
+     */
+    private $legaTitu;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="cert_titu", type="string", length=20, nullable=true)
+     */
+    private $certTitu;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id_titu", type="bigint")
@@ -21,66 +71,7 @@ class Titular
      */
     private $idTitu;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_titu", type="string", length=100, nullable=true)
-     */
-    private $nombTitu;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="domi_titu", type="string", length=100, nullable=true)
-     */
-    private $domiTitu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cuit_titu", type="string", length=20, nullable=true)
-     */
-    private $cuitTitu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="brut_titu", type="string", length=50, nullable=true)
-     */
-    private $brutTitu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="habi_titu", type="string", length=20, nullable=true)
-     */
-    private $habiTitu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="lega_titu", type="string", length=20, nullable=true)
-     */
-    private $legaTitu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cert_titu", type="string", length=20, nullable=true)
-     */
-    private $certTitu;
-
-
-
-    /**
-     * Get idTitu
-     *
-     * @return integer
-     */
-    public function getIdTitu()
-    {
-        return $this->idTitu;
-    }
 
     /**
      * Set nombTitu
@@ -250,8 +241,18 @@ class Titular
         return $this->certTitu;
     }
 
+    /**
+     * Get idTitu
+     *
+     * @return integer
+     */
+    public function getIdTitu()
+    {
+        return $this->idTitu;
+    }
+
     public function __toString()
     {
-        return(string) $this->nombTitu;
+        return (string) $this->nombTitu;
     }
 }

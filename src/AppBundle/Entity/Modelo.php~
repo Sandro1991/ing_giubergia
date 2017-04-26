@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Modelo
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="nomb_mode", type="string", length=50, nullable=true)
+     */
+    private $nombMode;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id_mode", type="bigint")
@@ -20,13 +27,6 @@ class Modelo
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idMode;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_mode", type="string", length=50, nullable=true)
-     */
-    private $nombMode;
 
     /**
      * @var \AppBundle\Entity\Marca

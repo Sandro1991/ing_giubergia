@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Monto
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_monto", type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idMonto;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="nomb_monto", type="string", length=50, nullable=false)
@@ -55,6 +46,15 @@ class Monto
      * @ORM\Column(name="m_noch", type="string", length=10, nullable=true)
      */
     private $mNoch;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_monto", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idMonto;
 
 
 }

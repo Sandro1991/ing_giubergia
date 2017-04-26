@@ -3,8 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert ;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Modelo
@@ -13,11 +13,18 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
  * @ORM\Entity
  * @UniqueEntity(
  *     fields={"nombMode"},
- *     message= "No se pueden cargar dos Modelos con el mismo nombre"
+ *     message="Este modelo ya existe, no se puede repetir"
  * )
  */
 class Modelo
 {
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="nomb_mode", type="string", length=50, nullable=true)
+     */
+    private $nombMode;
+
     /**
      * @var integer
      *
@@ -28,15 +35,8 @@ class Modelo
     private $idMode;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_mode", type="string", length=50, nullable=true)
-     */
-    private $nombMode;
-
-    /**
      * @var \AppBundle\Entity\Marca
-     *
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Marca")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_marca", referencedColumnName="id_marca")
@@ -45,16 +45,6 @@ class Modelo
     private $idMarca;
 
 
-
-    /**
-     * Get idMode
-     *
-     * @return integer
-     */
-    public function getIdMode()
-    {
-        return $this->idMode;
-    }
 
     /**
      * Set nombMode
@@ -78,6 +68,16 @@ class Modelo
     public function getNombMode()
     {
         return $this->nombMode;
+    }
+
+    /**
+     * Get idMode
+     *
+     * @return integer
+     */
+    public function getIdMode()
+    {
+        return $this->idMode;
     }
 
     /**
@@ -106,6 +106,6 @@ class Modelo
 
     public function __toString()
     {
-        return(string) $this->nombMode;
+        return (string) $this->nombMode;
     }
 }

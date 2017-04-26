@@ -7,41 +7,42 @@ div{
     font-style: normal;
     position: relative;
     font-size: 12pt;
+    font-stretch: ultra-condensed;
 }
 
 .nombTitu{
-    padding-top: 57pt;
+    padding-top: 62pt;
     margin-left: 71pt;
 }
 
 .domiTitu{
-    margin-top: 5pt;
+    margin-top: 4pt;
     margin-left: 75pt;
 }
 
 .brutTitu{
-    margin-top: 5pt;
+    margin-top: 4pt;
     margin-left: 73pt;
 }
 
 .cuitTitu{
     margin-top: -16pt;
-    margin-left: 225pt;
+    margin-left: 205pt;
 }
 
 .habiTitu{
-    margin-top: 5pt;
-    margin-left: 38pt;
+    margin-top: 4pt;
+    margin-left: 40pt;
 }
 
 .legaTitu{
-    margin-top: -16pt;
-    margin-left: 267pt;
+    margin-top: -15pt;
+    margin-left: 247pt;
 }
 
 .fecha{
     margin-top: -15pt;
-    margin-left: 405pt;
+    margin-left: 400pt;
 }
 
 .nombPermi{
@@ -49,77 +50,77 @@ div{
     margin-left: 50pt;
 }
 .dniPermi{
-    margin-top: 5pt;
-    margin-left: 54pt;
+    margin-top: 4pt;
+    margin-left: 56pt;
 }
 .direPermi{
-    margin-top: 5pt;
-    margin-left: 52pt;
+    margin-top: 4pt;
+    margin-left: 53pt;
 }
 .licencia{
-    margin-top: 5pt;
-    margin-left: 64pt;
+    margin-top: 4pt;
+    margin-left: 66pt;
 }
 
 .oblea{
     margin-top: -15pt;
-    margin-left: 263pt;
+    margin-left: 253pt;
 }
 
 .vacio1{
     margin-top: -15pt;
-    margin-left: 263pt;
+    margin-left: 253pt;
 }
 
 .vacio2{
-    margin-top: 5pt;
-    margin-left: 64pt;
+    margin-top: 4pt;
+    margin-left: 66pt;
 }
 
 .nombAgen{
     margin-top: -15pt;
-    margin-left: 400pt;
+    margin-left: 390pt;
 
 }
 
 .marcaAuto{
-    margin-top: 6pt;
-    margin-left: 52pt;
+    margin-top: 5pt;
+    margin-left: 50pt;
 }
 
 .modeAuto{
-    margin-top: -14pt;
-    margin-left: 235pt;
+    margin-top: -15pt;
+    margin-left: 210pt;
 }
 
 .anioAuto{
-    margin-top: -14pt;
+    margin-top: -16pt;
     margin-left: 300pt;
 
 }
 
 .domiAuto{
-    margin-top: -14pt;
-    margin-left: 412pt;
+    margin-top: -16pt;
+    margin-left: 410pt;
 }
 
 .nombReloj{
-    margin-top: 5pt;
+    margin-top: 4pt;
     margin-left: 53pt;
 }
 
 .numeReloj{
-    margin-top: -14pt;
-    margin-left: 234pt;
+    margin-top: -15pt;
+    margin-left: 210pt;
 }
 
 .numePrec{
-    margin-top: -14pt;
+    margin-top: -15pt;
     margin-left: 422pt;
 }
 
 .bdia{
-    margin-top: 20pt;
+    margin-top: 17pt;
     margin-left: 69pt;
 }
 
@@ -132,27 +133,26 @@ div{
     margin-left: 12pt;
 }
 .mnoch{
-    margin-top: 1pt;
     margin-left: 12pt;
 }
 
 .taller{
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: bold;
-    margin-top: -55pt;
-    margin-left: 400pt;
+    margin-top: -53pt;
+    margin-left: 420pt;
 }
 
 .tallernum{
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: bold;
-    margin-top: -1pt;
-    margin-left: 413pt;
+    margin-top: -2pt;
+    margin-left: 433pt;
 }
 
 .tallernom{
     font-weight: bold;
-    font-size: 7pt;
-    margin-top: 1pt;
-    margin-left: 390pt;
+    font-size: 6pt;
+    margin-top: -1pt;
+    margin-left: 404pt;
 }

@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Permisionario
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_permi", type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPermi;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="nomb_permi", type="string", length=100, nullable=true)
@@ -41,6 +32,15 @@ class Permisionario
      * @ORM\Column(name="dni_permi", type="string", length=20, nullable=true)
      */
     private $dniPermi;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_permi", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPermi;
 
 
 }

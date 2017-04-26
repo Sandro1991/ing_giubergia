@@ -3,8 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert ;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Auto
@@ -13,11 +13,31 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
  * @ORM\Entity
  * @UniqueEntity(
  *     fields={"domiAuto"},
- *     message= "No se pueden cargar dos Autos con el mismo dominio"
+ *     message="Este dominio ya existe, no se puede repetir"
  * )
  */
 class Auto
 {
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @Assert\Length(
+     *     min=6,
+     *     max=7,
+     *     minMessage= "Valor ingresado demasiado corto (ej: AAA123 o 11AAA22)",
+     *     maxMessage= "Valor ingresado demasiado largo (ej: AAA123 o 11AAA22)"
+     * )
+     * @ORM\Column(name="domi_auto", type="string", length=7, nullable=true)
+     */
+    private $domiAuto;
+
+    /**
+     * @var integer
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="anio_auto", type="integer", nullable=true)
+     */
+    private $anioAuto;
+
     /**
      * @var integer
      *
@@ -28,32 +48,8 @@ class Auto
     private $idAuto;
 
     /**
-     * @var string
-     * @Assert\Length(
-     *      min = 5,
-     *      max = 7,
-     *      minMessage = "Valor incorrecto, mínimo de 6 carácteres (ej: AAA123)",
-     *      maxMessage = "Valor incorrecto, máximo de 7 carácteres (ej: AA123AA)"
-     * )
-     * @ORM\Column(name="domi_auto", type="string", length=7, nullable=true)
-     */
-    private $domiAuto;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="anio_auto", type="integer", length=4, nullable=true)
-     * @Assert\Length(
-     *      min = 4,
-     *      max = 4,
-     *      exactMessage = "Valor incorrecto, debe ingresar año completo (ej: 2017)",
-     * )
-     */
-    private $anioAuto;
-
-    /**
      * @var \AppBundle\Entity\Modelo
-     *
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Modelo")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_mode", referencedColumnName="id_mode")
@@ -62,16 +58,6 @@ class Auto
     private $idMode;
 
 
-
-    /**
-     * Get idAuto
-     *
-     * @return integer
-     */
-    public function getIdAuto()
-    {
-        return $this->idAuto;
-    }
 
     /**
      * Set domiAuto
@@ -122,6 +108,16 @@ class Auto
     }
 
     /**
+     * Get idAuto
+     *
+     * @return integer
+     */
+    public function getIdAuto()
+    {
+        return $this->idAuto;
+    }
+
+    /**
      * Set idMode
      *
      * @param \AppBundle\Entity\Modelo $idMode
@@ -147,6 +143,6 @@ class Auto
 
     public function __toString()
     {
-        return(string) $this->domiAuto;
+        return (string) $this->domiAuto;
     }
 }

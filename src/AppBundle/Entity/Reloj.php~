@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Reloj
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="nomb_reloj", type="string", length=255, nullable=true)
+     */
+    private $nombReloj;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id_reloj", type="bigint")
@@ -20,13 +27,6 @@ class Reloj
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idReloj;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_reloj", type="string", length=255, nullable=true)
-     */
-    private $nombReloj;
 
 
 }

@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Chapa
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="nomb_chapa", type="string", length=50, nullable=true)
+     */
+    private $nombChapa;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id_chapa", type="bigint")
@@ -20,13 +27,6 @@ class Chapa
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idChapa;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_chapa", type="string", length=50, nullable=true)
-     */
-    private $nombChapa;
 
 
 }
