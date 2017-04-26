@@ -3,8 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert ;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Reloj
@@ -13,11 +13,18 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
  * @ORM\Entity
  * @UniqueEntity(
  *     fields={"nombReloj"},
- *     message= "No se pueden cargar dos Relojes con el mismo nombre"
+ *     message="Este reloj ya existe, no se puede repetir"
  * )
  */
 class Reloj
 {
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="nomb_reloj", type="string", length=255, nullable=true)
+     */
+    private $nombReloj;
+
     /**
      * @var integer
      *
@@ -27,24 +34,7 @@ class Reloj
      */
     private $idReloj;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_reloj", type="string", length=255, nullable=true)
-     */
-    private $nombReloj;
 
-
-
-    /**
-     * Get idReloj
-     *
-     * @return integer
-     */
-    public function getIdReloj()
-    {
-        return $this->idReloj;
-    }
 
     /**
      * Set nombReloj
@@ -70,8 +60,18 @@ class Reloj
         return $this->nombReloj;
     }
 
+    /**
+     * Get idReloj
+     *
+     * @return integer
+     */
+    public function getIdReloj()
+    {
+        return $this->idReloj;
+    }
+
     public function __toString()
     {
-        return(string) $this->nombReloj;
+        return (string) $this->nombReloj;
     }
 }

@@ -21,16 +21,11 @@ easy_admin:
             - { entity: 'Marca', icon: 'tags' }
             - { entity: 'Titular', icon: 'user' }
         form_theme: 'vertical'
-        brand_color: '#374089'
+        brand_color: '#ce6e00'
         assets:
             favicon: '/assets/icons/logo_giubergia_ingenieria.png'
 
 ##formato de fechas y horas
-    formats:
-        date:     'd/m/Y'
-        time:     'H:i'
-        datetime: 'd/m/Y H:i:s'
-
     entities:
 
 ##entidad certificado
@@ -52,7 +47,6 @@ easy_admin:
                     - { property: 'idReloj', label: 'Reloj' }
                     - { property: 'numeReloj', label: 'Nº Reloj' }
                     - { property: 'idMonto', label: 'Tarifa'}
-                    - { property: 'idTitu', label: 'Titular' }
             list:
                 title: "Lista de Certificados"
                 actions:
@@ -80,7 +74,8 @@ easy_admin:
         Agencia:
             label: 'Agencias'
             class: AppBundle\Entity\Agencia
-            disabled_actions: ['show']
+            controller: AppBundle\Controller\Admin\AgenciaController
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'nombAgen', label: 'Nombre Agencia'}
@@ -97,7 +92,7 @@ easy_admin:
             label: 'Dominios'
             class: AppBundle\Entity\Auto
             controller: AppBundle\Controller\Admin\AutoController
-            disabled_actions: ['show']
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'domiAuto', label: 'Dominio del Vehículo'}
@@ -117,7 +112,8 @@ easy_admin:
         Chapa:
             label: 'Oblea/Licencia'
             class: AppBundle\Entity\Chapa
-            disabled_actions: ['show']
+            controller: AppBundle\Controller\Admin\ChapaController
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'nombChapa', label: 'Tipo Habilitación'}
@@ -133,7 +129,8 @@ easy_admin:
         Marca:
             label: 'Marcas'
             class: AppBundle\Entity\Marca
-            disabled_actions: ['show']
+            controller: AppBundle\Controller\Admin\MarcaController
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'nombMarca', label: 'Nombre Marca'}
@@ -150,7 +147,7 @@ easy_admin:
             label: 'Modelos'
             class: AppBundle\Entity\Modelo
             controller: AppBundle\Controller\Admin\ModeloController
-            disabled_actions: ['show']
+            disabled_actions: ['show','delete']
             form:
                 - { property: 'nombMode', label: 'Nombre Modelo'}
                 - { property: 'idMarca', label: 'Marca Perteneciente'}
@@ -167,7 +164,8 @@ easy_admin:
         Monto:
             label: 'Tarifa'
             class: AppBundle\Entity\Monto
-            disabled_actions: ['show']
+            controller: AppBundle\Controller\Admin\MontoController
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'nombMonto', label: 'Nombre Tarifa'}
@@ -191,7 +189,8 @@ easy_admin:
         Permisionario:
             label: 'Permisionarios'
             class: AppBundle\Entity\Permisionario
-            disabled_actions: ['show']
+            controller: AppBundle\Controller\Admin\PermisionarioController
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'nombPermi', label: 'Nombre y Apellido del Permisionario'}
@@ -211,7 +210,8 @@ easy_admin:
         Reloj:
             label: 'Relojes'
             class: AppBundle\Entity\Reloj
-            disabled_actions: ['show']
+            controller: AppBundle\Controller\Admin\RelojController
+            disabled_actions: ['show','delete']
             form:
                 fields:
                     - { property: 'nombReloj', label: 'Nombre de Reloj'}
@@ -227,7 +227,7 @@ easy_admin:
         Titular:
             label: 'Titular'
             class: AppBundle\Entity\Titular
-            disabled_actions: ['new', 'delete']
+            disabled_actions: ['new', 'delete','show']
             edit:
                 label: 'Editando Titular del Taller'
                 fields:

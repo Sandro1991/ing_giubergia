@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Controller\Admin;
+use AppBundle\Entity\Certificado;
 use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,39 +10,51 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class CertificadoController extends BaseAdminController
 {
-    public function imprimirnewAction() {
-
-        $snappy = $this->get('knp_snappy.pdf');
-        $snappy->setOption('no-background', true);
-        $snappy->setOption('encoding', 'UTF-8');
-        $snappy->setOption('user-style-sheet','../web/assets/css/print.css');
-
-        $html = $this->renderView(':index:impresion.html.twig', array(
-        ));
-        $filename = 'certificado';
-
-        return new Response(
-            $snappy->getOutputFromHtml($html),
-            200,
-            array(
-                'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="'.$filename.'.pdf"'
-            )
-
-        );
-    }
+//    public function imprimirnewAction()
+//    {
+//
+//        $snappy = $this->get('knp_snappy.pdf');
+//        $snappy->setOption('no-background', true);
+//        $snappy->setOption('encoding', 'UTF-8');
+//        $snappy->setOption('user-style-sheet', '../web/assets/css/print.css');
+//
+//
+//        $cert = new Certificado();
+//        $em = $this->getDoctrine()->getManager();
+//        if ($cert->isSubmitted() && $cert->isValid()) {
+//            $em->persist($cert);
+//            $em->flush($cert);
+//
+//            $html = $this->renderView(':index:impresion.html.twig', array(
+//                'cert' => $cert
+//            ));
+//            $filename = 'certificado';
+//
+//            return new Response(
+//                $snappy->getOutputFromHtml($html),
+//                200,
+//                array(
+//                    'Content-Type' => 'application/pdf',
+//                    'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
+//                )
+//
+//            );
+//        }
+//    }
     
     public function imprimirAction()
     {
         $id = $this->request->query->get('id');
         $entity = $this->em->getRepository('AppBundle:Certificado')->find($id);
+        $entity2 = $this->em->getRepository('AppBundle:Titular')->find(1);
         $snappy = $this->get('knp_snappy.pdf');
         $snappy->setOption('no-background', true);
         $snappy->setOption('encoding', 'UTF-8');
         $snappy->setOption('user-style-sheet', '../web/assets/css/print.css');
 
         $html = $this->renderView(':index:impresion.html.twig', array(
-            'cert' => $entity
+            'cert' => $entity,
+            'titu' => $entity2
         ));
         $filename = 'certificado';
 

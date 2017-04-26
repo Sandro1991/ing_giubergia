@@ -3,8 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert ;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * Permisionario
@@ -13,11 +14,36 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
  * @ORM\Entity
  * @UniqueEntity(
  *     fields={"dniPermi"},
- *     message= "No se pueden cargar dos permisionarios con el mismo DNI, verifique el número ingresado"
+ *     message="Este DNI ya existe, no se puede repetir"
  * )
  */
 class Permisionario
 {
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="nomb_permi", type="string", length=100, nullable=true)
+     */
+    private $nombPermi;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="dire_permi", type="string", length=100, nullable=true)
+     */
+    private $direPermi;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @Assert\Length(
+     *     min=7,
+     *     minMessage= "Valor ingresado demasiado corto (ej: 3234234)"
+     * )
+     * @ORM\Column(name="dni_permi", type="string", length=20, nullable=true)
+     */
+    private $dniPermi;
+
     /**
      * @var integer
      *
@@ -27,38 +53,7 @@ class Permisionario
      */
     private $idPermi;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_permi", type="string", length=100, nullable=true)
-     */
-    private $nombPermi;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="dire_permi", type="string", length=100, nullable=true)
-     */
-    private $direPermi;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="dni_permi", type="string", length=20, nullable=true)
-     */
-    private $dniPermi;
-
-
-
-    /**
-     * Get idPermi
-     *
-     * @return integer
-     */
-    public function getIdPermi()
-    {
-        return $this->idPermi;
-    }
 
     /**
      * Set nombPermi
@@ -132,8 +127,18 @@ class Permisionario
         return $this->dniPermi;
     }
 
+    /**
+     * Get idPermi
+     *
+     * @return integer
+     */
+    public function getIdPermi()
+    {
+        return $this->idPermi;
+    }
+
     public function __toString()
     {
-        return(string) $this->nombPermi;
+        return (string) $this->nombPermi;
     }
 }

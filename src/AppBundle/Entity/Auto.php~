@@ -13,18 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Auto
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_auto", type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idAuto;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="domi_auto", type="string", length=6, nullable=true)
+     * @ORM\Column(name="domi_auto", type="string", length=7, nullable=true)
      */
     private $domiAuto;
 
@@ -34,6 +25,15 @@ class Auto
      * @ORM\Column(name="anio_auto", type="integer", nullable=true)
      */
     private $anioAuto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_auto", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAuto;
 
     /**
      * @var \AppBundle\Entity\Modelo

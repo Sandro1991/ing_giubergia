@@ -3,8 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert ;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Monto
@@ -13,11 +13,46 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
  * @ORM\Entity
  * @UniqueEntity(
  *     fields={"nombMonto"},
- *     message= "No se pueden cargar dos Tarifas con el mismo nombre"
+ *     message="Este nombre ya existe, no se puede repetir"
  * )
  */
 class Monto
 {
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="nomb_monto", type="string", length=50, nullable=false)
+     */
+    private $nombMonto;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="b_dia", type="string", length=10, nullable=true)
+     */
+    private $bDia;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="b_noch", type="string", length=10, nullable=true)
+     */
+    private $bNoch;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="m_dia", type="string", length=10, nullable=true)
+     */
+    private $mDia;
+
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="m_noch", type="string", length=10, nullable=true)
+     */
+    private $mNoch;
+
     /**
      * @var integer
      *
@@ -27,52 +62,7 @@ class Monto
      */
     private $idMonto;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_monto", type="string", length=50, nullable=false)
-     */
-    private $nombMonto;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="b_dia", type="string", length=10, nullable=true)
-     */
-    private $bDia;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="b_noch", type="string", length=10, nullable=true)
-     */
-    private $bNoch;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="m_dia", type="string", length=10, nullable=true)
-     */
-    private $mDia;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="m_noch", type="string", length=10, nullable=true)
-     */
-    private $mNoch;
-
-
-
-    /**
-     * Get idMonto
-     *
-     * @return integer
-     */
-    public function getIdMonto()
-    {
-        return $this->idMonto;
-    }
 
     /**
      * Set nombMonto
@@ -194,8 +184,18 @@ class Monto
         return $this->mNoch;
     }
 
+    /**
+     * Get idMonto
+     *
+     * @return integer
+     */
+    public function getIdMonto()
+    {
+        return $this->idMonto;
+    }
+
     public function __toString()
     {
-        return(string) $this->nombMonto;
+        return (string) $this->nombMonto;
     }
 }

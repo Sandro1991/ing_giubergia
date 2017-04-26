@@ -7,20 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Certificado
  *
- * @ORM\Table(name="certificado", uniqueConstraints={@ORM\UniqueConstraint(name="nume_chapa", columns={"nume_chapa"})}, indexes={@ORM\Index(name="FK_AUTO_CERT", columns={"id_auto"}), @ORM\Index(name="FK_TITU_CERT", columns={"id_titu"}), @ORM\Index(name="FK_8B8B21056EC521FB", columns={"id_permi"}), @ORM\Index(name="FK_8B8B2105A982CFD9", columns={"id_reloj"}), @ORM\Index(name="FK_8B8B2105C1189551", columns={"id_chapa"}), @ORM\Index(name="FK_8B8B2105D6E65D60", columns={"id_agen"}), @ORM\Index(name="FK_8B8B2105FE57C495", columns={"id_monto"})})
+ * @ORM\Table(name="certificado", uniqueConstraints={@ORM\UniqueConstraint(name="nume_chapa", columns={"nume_chapa"})}, indexes={@ORM\Index(name="FK_AUTO_CERT", columns={"id_auto"}), @ORM\Index(name="FK_8B8B21056EC521FB", columns={"id_permi"}), @ORM\Index(name="FK_8B8B2105A982CFD9", columns={"id_reloj"}), @ORM\Index(name="FK_8B8B2105C1189551", columns={"id_chapa"}), @ORM\Index(name="FK_8B8B2105D6E65D60", columns={"id_agen"}), @ORM\Index(name="FK_8B8B2105FE57C495", columns={"id_monto"})})
  * @ORM\Entity
  */
 class Certificado
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_cert", type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idCert;
-
     /**
      * @var integer
      *
@@ -33,71 +24,30 @@ class Certificado
      *
      * @ORM\Column(name="nume_prec", type="bigint", nullable=true)
      */
-    private $numePrec = '0';
+    private $numePrec;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nume_reloj", type="string", length=255, nullable=true)
      */
-    private $numeReloj = 's/n';
+    private $numeReloj;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_save", type="datetime", nullable=true)
      */
-    private $dateSave;
+    private $dateSave = 'CURRENT_TIMESTAMP';
 
     /**
-     * @var \AppBundle\Entity\Titular
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Titular")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_titu", referencedColumnName="id_titu")
-     * })
+     * @ORM\Column(name="id_cert", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idTitu;
-
-    /**
-     * @var \AppBundle\Entity\Permisionario
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Permisionario")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_permi", referencedColumnName="id_permi")
-     * })
-     */
-    private $idPermi;
-
-    /**
-     * @var \AppBundle\Entity\Reloj
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Reloj")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_reloj", referencedColumnName="id_reloj")
-     * })
-     */
-    private $idReloj;
-
-    /**
-     * @var \AppBundle\Entity\Chapa
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Chapa")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_chapa", referencedColumnName="id_chapa")
-     * })
-     */
-    private $idChapa;
-
-    /**
-     * @var \AppBundle\Entity\Agencia
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Agencia")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_agen", referencedColumnName="id_agen")
-     * })
-     */
-    private $idAgen;
+    private $idCert;
 
     /**
      * @var \AppBundle\Entity\Auto
@@ -118,6 +68,46 @@ class Certificado
      * })
      */
     private $idMonto;
+
+    /**
+     * @var \AppBundle\Entity\Agencia
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Agencia")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_agen", referencedColumnName="id_agen")
+     * })
+     */
+    private $idAgen;
+
+    /**
+     * @var \AppBundle\Entity\Reloj
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Reloj")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_reloj", referencedColumnName="id_reloj")
+     * })
+     */
+    private $idReloj;
+
+    /**
+     * @var \AppBundle\Entity\Permisionario
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Permisionario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_permi", referencedColumnName="id_permi")
+     * })
+     */
+    private $idPermi;
+
+    /**
+     * @var \AppBundle\Entity\Chapa
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Chapa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_chapa", referencedColumnName="id_chapa")
+     * })
+     */
+    private $idChapa;
 
 
 }

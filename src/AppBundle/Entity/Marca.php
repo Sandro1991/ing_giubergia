@@ -3,8 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert ;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Marca
@@ -13,11 +13,18 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
  * @ORM\Entity
  * @UniqueEntity(
  *     fields={"nombMarca"},
- *     message= "No se pueden cargar dos Marcas con el mismo nombre"
+ *     message="Esta marca ya existe, no se puede repetir"
  * )
  */
 class Marca
 {
+    /**
+     * @var string
+     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @ORM\Column(name="nomb_marca", type="string", length=100, nullable=true)
+     */
+    private $nombMarca;
+
     /**
      * @var integer
      *
@@ -27,24 +34,7 @@ class Marca
      */
     private $idMarca;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomb_marca", type="string", length=100, nullable=true)
-     */
-    private $nombMarca;
 
-
-
-    /**
-     * Get idMarca
-     *
-     * @return integer
-     */
-    public function getIdMarca()
-    {
-        return $this->idMarca;
-    }
 
     /**
      * Set nombMarca
@@ -70,8 +60,18 @@ class Marca
         return $this->nombMarca;
     }
 
+    /**
+     * Get idMarca
+     *
+     * @return integer
+     */
+    public function getIdMarca()
+    {
+        return $this->idMarca;
+    }
+
     public function __toString()
     {
-        return(string) $this->nombMarca;
+        return (string) $this->nombMarca;
     }
 }
