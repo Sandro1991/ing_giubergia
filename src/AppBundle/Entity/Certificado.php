@@ -20,7 +20,7 @@ class Certificado
 {
     /**
      * @var integer
-     * @Assert\NotBlank(message= "Debe ingresar un valor")
+     * @Assert\NotBlank(message= "Debe ingresar un número de Habilitación")
      * @Assert\Length(
      *     min=2,
      *     minMessage= "Valor ingresado demasiado corto"
@@ -34,14 +34,16 @@ class Certificado
      *
      * @ORM\Column(name="nume_prec", type="bigint", nullable=true)
      * @Assert\NotBlank(
-     *     message= "Debe ingresar un valor"
+     *     message= "Debe ingresar un número de precinto"
      * )
      */
     private $numePrec;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar un número de precinto"
+     * )
      * @ORM\Column(name="nume_reloj", type="string", length=255, nullable=true)
      */
     private $numeReloj;
@@ -69,6 +71,9 @@ class Certificado
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_auto", referencedColumnName="id_auto")
      * })
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar un Dominio"
+     * )
      */
     private $idAuto;
 
@@ -79,6 +84,9 @@ class Certificado
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_monto", referencedColumnName="id_monto")
      * })
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar una Tarifa"
+     * )
      */
     private $idMonto;
 
@@ -89,6 +97,9 @@ class Certificado
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_agen", referencedColumnName="id_agen")
      * })
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar una Agencia"
+     * )
      */
     private $idAgen;
 
@@ -99,6 +110,9 @@ class Certificado
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_reloj", referencedColumnName="id_reloj")
      * })
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar un Reloj"
+     * )
      */
     private $idReloj;
 
@@ -109,6 +123,9 @@ class Certificado
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_permi", referencedColumnName="id_permi")
      * })
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar un Permisionario"
+     * )
      */
     private $idPermi;
 
@@ -119,6 +136,9 @@ class Certificado
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_chapa", referencedColumnName="id_chapa")
      * })
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar un Tipo de Habilitación"
+     * )
      */
     private $idChapa;
 
