@@ -41,7 +41,9 @@ class Certificado
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(
+     *     message= "Debe ingresar un número de precinto"
+     * )
      * @ORM\Column(name="nume_reloj", type="string", length=255, nullable=true)
      */
     private $numeReloj;
