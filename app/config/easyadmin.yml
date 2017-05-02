@@ -63,8 +63,8 @@ easy_admin:
                 sort: 'dateSave'
             new:
                 title: "Nuevo Certificado"
-                actions:
-                    - { name: 'imprimirnew', label: 'Imprimir y Guardar', icon: 'print', class: 'btn-success'}
+#                actions:
+#                    - { name: 'imprimirnew', label: 'Imprimir y Guardar', icon: 'print', class: 'btn-success'}
 
             edit:
                 title: 'Editando Certificado'
