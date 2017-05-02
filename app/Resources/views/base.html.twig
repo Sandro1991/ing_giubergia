@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8" />
+        {% block meta %}
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name=robots content=all>
+            <meta name=googlebot content=all>
+            <meta name=language content=es>
+            <meta name=classification content="Empresa orientada a la instalacion de accesorios para taxis">
+            <meta property=type content=website>
+            <meta property=site_name content="Ingenieria Giubergia">
+            <meta property=title content="Empresas instaladoras de accesorios en taxis">
+            <meta name=description content="Ingenieria Giubergia es una empresa orientada a la instalacion de accesorios (tacografos, taximetros, etc) en los vehiculos (taxis y remises).">
+            <meta name=keywords content="taxis, remises, tacografos, taximetros, accesorios, autos, remis, taxi, localizadores, mapa, Rio Cuarto, Cordoba, Ingenieria Giubergia, Giubergia, Ingeniero, Ingenieria">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="icon" type="image/x-icon" href="{{ asset('assets/icons/logo_giubergia_ingenieria.png') }}" />
+        {% endblock %}
         <title>{% block title %}Igeniería Giubergia{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('assets/icons/logo_giubergia_ingenieria.png') }}" />
         {% block stylesheets %}
+            <link href="{{ asset('assets/css/freelancer.min.css') }}" rel="stylesheet">
             <link rel="stylesheet" href="{{ asset('bundles/easyadmin/stylesheet/bootstrap.min.css') }}"/>
+            <link href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+            <!-- jQuery -->
+            <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+            <!-- Plugin JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+            <!-- Contact Form JavaScript -->
+            <script src="{{ asset('assets/js/jqBootstrapValidation.js') }}"></script>
+            <script src="{{ asset('assets/js/contact_me.js') }}"></script>
+
+            <!-- Theme JavaScript -->
+            <script src="{{ asset('assets/js/freelancer.min.js') }}"></script>
+        {% endblock %}
+
     </body>
 </html>
