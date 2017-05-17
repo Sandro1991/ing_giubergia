@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5025f8c-24d3-4c3b-b0ca-96515c2cf9c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ContactType.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FOS/UserBundle/Model/Group.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FOS/UserBundle/Model/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/portfolio/cabin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/portfolio/cake.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/portfolio/circus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/portfolio/game.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/portfolio/safe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/portfolio/submarine.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/img/profile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/package.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/index/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/index/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/IndexController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/freelancer.css" afterPath="$PROJECT_DIR$/web/assets/css/freelancer.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,11 +33,9 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/index/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="160" column="27" lean-forward="true" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
-              <folding>
-                <element signature="e#8247#8275#0#Twig" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="160" column="27" lean-forward="false" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,7 +63,7 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
+            <state relative-caret-position="405">
               <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#41#68#0#PHP" expanded="true" />
@@ -96,7 +75,7 @@
       <file leaf-file-name="ContactType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ContactType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="495">
               <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#34#74#0#PHP" expanded="true" />
@@ -183,8 +162,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="52" />
     <option name="y" value="-11" />
-    <option name="width" value="1315" />
-    <option name="height" value="780" />
+    <option name="width" value="1229" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -204,7 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -385,12 +363,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tarjeta/app/config/parameters.yml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aimeos" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
@@ -538,12 +517,14 @@
       <workItem from="1493717714691" duration="6616000" />
       <workItem from="1493744493969" duration="733000" />
       <workItem from="1493918253417" duration="14169000" />
-      <workItem from="1493977251956" duration="3691000" />
+      <workItem from="1493977251956" duration="4387000" />
+      <workItem from="1494254286475" duration="1167000" />
+      <workItem from="1494434544692" duration="717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174140000" />
+    <option name="totallyTimeSpent" value="176720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -555,17 +536,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="-11" width="1315" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="52" y="-11" width="1229" height="1036" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23362273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24216765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34365326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34257206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -806,9 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,11 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="151" column="22" lean-forward="true" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
-          <folding>
-            <element signature="e#4246#4269#0#PHP" expanded="true" />
-            <element signature="e#4446#4475#0#PHP" expanded="true" />
-            <marker date="1489542085120" expanded="true" signature="1299:1469" ph="SELECT * FRO... comp_serv" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -868,7 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="37" column="31" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="37" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-810">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ContactType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="495">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="e#34#74#0#PHP" expanded="true" />
@@ -924,7 +889,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
+        <state relative-caret-position="405">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#41#68#0#PHP" expanded="true" />
@@ -934,11 +899,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/index/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="160" column="27" lean-forward="true" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
-          <folding>
-            <element signature="e#8247#8275#0#Twig" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="160" column="27" lean-forward="false" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
